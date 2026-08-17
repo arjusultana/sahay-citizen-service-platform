@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — Sahay</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind-config.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-paper dark:bg-ink text-ink dark:text-paper transition-colors">
+
+  <!-- TOP BAR -->
+  <div class="flex items-center justify-between px-4 py-2 bg-white dark:bg-ink/60 border-b border-paper3 dark:border-white/10 text-xs">
+    <div id="date-time" class="font-mono text-ink/60 dark:text-paper/60"></div>
+    <div class="flex items-center gap-3">
+      <select id="langToggle" class="bg-paper2 dark:bg-white/10 px-2 py-1 rounded text-xs">
+        <option value="en">EN</option>
+        <option value="bn">BN</option>
+      </select>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="darkToggle" class="sr-only peer">
+        <div class="w-10 h-5 bg-paper3 rounded-full peer peer-checked:bg-teal
+          after:content-[''] after:absolute after:top-[2px] after:left-[2px]
+          after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all
+          peer-checked:after:translate-x-full"></div>
+      </label>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <div class="flex justify-between items-center px-6 py-3 sticky top-0 z-50 bg-paper/90 dark:bg-ink/90 backdrop-blur-md border-b border-paper3 dark:border-white/10">
+    <a href="index.html" class="flex items-center gap-2">
+      <svg width="26" height="26" viewBox="0 0 30 30" fill="none">
+        <circle cx="15" cy="15" r="14" stroke="#1F6F5C" stroke-width="1.5"/>
+        <circle cx="15" cy="15" r="4" fill="#C9922B"/>
+        <circle cx="15" cy="4.5" r="2.4" fill="#1F6F5C"/>
+        <circle cx="25.5" cy="15" r="2.4" fill="#1F6F5C"/>
+        <circle cx="15" cy="25.5" r="2.4" fill="#1F6F5C"/>
+        <circle cx="4.5" cy="15" r="2.4" fill="#1F6F5C"/>
+      </svg>
+      <span class="font-display font-semibold text-lg">Sahay</span>
+    </a>
+    <div class="text-sm text-ink/60 dark:text-paper/60">
+      New here? <a href="register.html" class="text-teal dark:text-goldLight font-medium hover:underline">Create an account</a>
+    </div>
+  </div>
+
+  <!-- LOGIN SPLIT -->
+  <main class="min-h-[calc(100vh-96px)] grid grid-cols-1 lg:grid-cols-2">
+
+    <!-- LEFT: BRAND PANEL -->
+    <div class="hidden lg:flex flex-col justify-between bg-ink text-paper p-12 relative overflow-hidden">
+      <div>
+        <span class="font-mono text-xs tracking-widest uppercase text-goldLight">Citizen service platform</span>
+        <h1 class="font-display text-4xl font-semibold mt-4 leading-tight">
+          Help is closer<br>than you think<span class="bn"> — সাহায্য কাছেই আছে</span>
+        </h1>
+      </div>
+
+      <div class="flex justify-center py-10">
+        <svg viewBox="0 0 300 300" class="w-72 h-72">
+          <line x1="150" y1="150" x2="150" y2="55" stroke="#3d5750" stroke-width="1.5"/>
+          <line x1="150" y1="150" x2="245" y2="150" stroke="#3d5750" stroke-width="1.5"/>
+          <line x1="150" y1="150" x2="150" y2="245" stroke="#3d5750" stroke-width="1.5"/>
+          <line x1="150" y1="150" x2="55" y2="150" stroke="#3d5750" stroke-width="1.5"/>
+          <circle cx="150" cy="150" r="38" fill="#2E8B73"/>
+          <text x="150" y="155" text-anchor="middle" class="font-display" font-size="13" fill="#F8F5EC">You</text>
+          <circle cx="150" cy="55" r="30" fill="#1c3d36" stroke="#C9922B" stroke-width="1.2"/>
+          <text x="150" y="59" text-anchor="middle" class="node-label" fill="#F8F5EC">Medical</text>
+          <circle cx="245" cy="150" r="30" fill="#1c3d36" stroke="#C9922B" stroke-width="1.2"/>
+          <text x="245" y="154" text-anchor="middle" class="node-label" fill="#F8F5EC">Civic</text>
+          <circle cx="150" cy="245" r="30" fill="#1c3d36" stroke="#C9922B" stroke-width="1.2"/>
+          <text x="150" y="249" text-anchor="middle" class="node-label" fill="#F8F5EC">Neighbor</text>
+          <circle cx="55" cy="150" r="30" fill="#1c3d36" stroke="#C9922B" stroke-width="1.2"/>
+          <text x="55" y="154" text-anchor="middle" class="node-label" fill="#F8F5EC">Student</text>
+        </svg>
+      </div>
+
+      <p class="text-sm text-paper/60 max-w-xs">One verified profile, one trust score, across every kind of help you give or need.</p>
+    </div>
+
+    <!-- RIGHT: LOGIN FORM -->
+    <div class="flex items-center justify-center p-8">
+      <div class="w-full max-w-sm">
+        <h2 class="font-display text-3xl font-semibold mb-1">Log in</h2>
+        <p class="text-ink/60 dark:text-paper/60 text-sm mb-8">Continue to your Sahay account.</p>
+
+        <form id="loginForm" class="space-y-4">
+          <div>
+            <label class="block text-xs font-medium text-ink/70 dark:text-paper/70 mb-1.5">Phone or email</label>
+            <div class="flex items-center border border-paper3 dark:border-white/15 rounded-lg px-3 py-2.5 bg-white dark:bg-white/5 focus-within:border-teal">
+              <i class="fas fa-user text-ink/40 mr-2 text-sm"></i>
+              <input type="text" placeholder="01XXXXXXXXX or you@email.com" class="bg-transparent outline-none w-full text-sm">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-ink/70 dark:text-paper/70 mb-1.5">Password</label>
+            <div class="flex items-center border border-paper3 dark:border-white/15 rounded-lg px-3 py-2.5 bg-white dark:bg-white/5 focus-within:border-teal">
+              <i class="fas fa-lock text-ink/40 mr-2 text-sm"></i>
+              <input id="pw" type="password" placeholder="••••••••" class="bg-transparent outline-none w-full text-sm">
+              <i id="pwToggle" class="fas fa-eye text-ink/40 cursor-pointer text-sm"></i>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between text-xs">
+            <label class="flex items-center gap-2 text-ink/60 dark:text-paper/60">
+              <input type="checkbox" class="rounded border-paper3">
+              Remember me
+            </label>
+            <a href="#" class="text-teal dark:text-goldLight hover:underline">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="w-full bg-teal hover:bg-tealLight text-white rounded-lg py-2.5 text-sm font-medium transition-colors">
+            Log in
+          </button>
+        </form>
+
+        <div class="flex items-center gap-3 my-6">
+          <div class="h-px bg-paper3 dark:bg-white/10 flex-1"></div>
+          <span class="text-xs text-ink/40 dark:text-paper/40">or continue with</span>
+          <div class="h-px bg-paper3 dark:bg-white/10 flex-1"></div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <button class="flex items-center justify-center gap-2 border border-paper3 dark:border-white/15 rounded-lg py-2.5 text-sm hover:bg-paper2 dark:hover:bg-white/5">
+            <i class="fab fa-google"></i> Google
+          </button>
+          <button class="flex items-center justify-center gap-2 border border-paper3 dark:border-white/15 rounded-lg py-2.5 text-sm hover:bg-paper2 dark:hover:bg-white/5">
+            <i class="fas fa-mobile-screen"></i> OTP
+          </button>
+        </div>
+
+        <p class="text-xs text-ink/50 dark:text-paper/50 text-center mt-8">
+          By continuing, you agree to Sahay's <a href="#" class="underline">Terms</a> and <a href="#" class="underline">Safety Policy</a>.
+        </p>
+      </div>
+    </div>
+  </main>
+
+<script src="js/script.js"></script>
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    // form handling goes here
+  });
+</script>
+</body>
+</html>

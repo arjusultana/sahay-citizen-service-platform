@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sahay — Messages</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-paper dark:bg-ink text-ink dark:text-paper min-h-screen">
+
+  <div class="flex items-center justify-between px-4 sm:px-6 py-2 bg-white dark:bg-ink/60 border-b border-paper3 dark:border-white/10 text-xs">
+    <div id="date-time" class="font-mono text-ink/60 dark:text-paper/60"></div>
+
+    <div class="flex items-center gap-3">
+      <select id="langToggle" class="bg-paper2 dark:bg-white/10 px-2 py-1 rounded text-xs outline-none">
+        <option value="en">EN</option>
+        <option value="bn">BN</option>
+      </select>
+
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="darkToggle" class="sr-only peer">
+        <div class="w-10 h-5 bg-paper3 dark:bg-white/10 rounded-full peer-checked:bg-teal after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-full"></div>
+      </label>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-50 bg-paper/90 dark:bg-ink/90 backdrop-blur-md border-b border-paper3 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+
+      <a href="dashboard.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-full bg-teal text-white flex items-center justify-center font-display font-semibold">S</div>
+        <span class="font-display font-semibold text-lg">Sahay</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="dashboard.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">Home</a>
+        <a href="find-help.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">Find Help</a>
+        <a href="my-requests.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">My Requests</a>
+        <a href="messages.html" class="text-xs font-medium text-teal">Messages</a>
+      </nav>
+
+      <a href="profile.html" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-teal text-white flex items-center justify-center text-xs font-medium">A</div>
+        <span class="hidden sm:block text-xs font-medium">Arju Sultana</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 pb-28">
+
+    <div class="mb-6">
+      <span class="font-mono text-[10px] tracking-widest uppercase text-teal dark:text-goldLight">Stay connected</span>
+      <h1 class="font-display text-3xl sm:text-4xl font-semibold mt-2">Messages</h1>
+      <p class="text-sm text-ink/60 dark:text-paper/60 mt-2">Talk safely with people connected to your requests.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-4 lg:gap-6 min-h-[550px] h-[calc(100vh-250px)]">
+
+      <section id="conversationPanel" class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl overflow-hidden flex flex-col">
+
+        <div class="p-4 border-b border-paper3 dark:border-white/10">
+          <div class="flex items-center justify-between mb-3">
+            <h2 class="font-display font-semibold">Conversations</h2>
+            <span class="text-[10px] px-2 py-1 rounded-full bg-teal/10 text-teal">3 active</span>
+          </div>
+
+          <div class="flex items-center gap-2 border border-paper3 dark:border-white/10 rounded-lg px-3 py-2">
+            <i class="fas fa-search text-ink/30 dark:text-paper/30 text-xs"></i>
+            <input id="searchConversation" type="text" placeholder="Search conversations..." class="bg-transparent outline-none w-full text-xs">
+          </div>
+        </div>
+
+        <div id="conversationList" class="flex-1 overflow-y-auto">
+
+          <button class="conversation w-full text-left p-4 border-b border-paper3 dark:border-white/10 bg-teal/5 border-l-2 border-l-teal" data-name="Rahim">
+            <div class="flex items-start gap-3">
+              <div class="relative shrink-0">
+                <div class="w-10 h-10 rounded-full bg-teal text-white flex items-center justify-center text-xs font-medium">R</div>
+                <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-green-500 border-2 border-white dark:border-ink"></span>
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-sm font-medium truncate">Rahim Hasan</span>
+                  <span class="text-[9px] text-ink/40 dark:text-paper/40">5m</span>
+                </div>
+                <p class="text-[10px] text-teal mt-1">Re: O+ blood donor</p>
+                <p class="text-[10px] text-ink/50 dark:text-paper/50 mt-1 truncate">I can help. What time should I come?</p>
+              </div>
+
+              <span class="w-5 h-5 shrink-0 rounded-full bg-teal text-white text-[9px] flex items-center justify-center">2</span>
+            </div>
+          </button>
+
+          <button class="conversation w-full text-left p-4 border-b border-paper3 dark:border-white/10 hover:bg-paper2 dark:hover:bg-white/5" data-name="Nusrat">
+            <div class="flex items-start gap-3">
+              <div class="relative shrink-0">
+                <div class="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center text-xs font-medium">N</div>
+                <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-green-500 border-2 border-white dark:border-ink"></span>
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-sm font-medium truncate">Nusrat Jahan</span>
+                  <span class="text-[9px] text-ink/40 dark:text-paper/40">2h</span>
+                </div>
+                <p class="text-[10px] text-gold mt-1">Re: Physics tutor</p>
+                <p class="text-[10px] text-ink/50 dark:text-paper/50 mt-1 truncate">I have experience teaching HSC Physics.</p>
+              </div>
+            </div>
+          </button>
+
+          <button class="conversation w-full text-left p-4 border-b border-paper3 dark:border-white/10 hover:bg-paper2 dark:hover:bg-white/5" data-name="Sabbir">
+            <div class="flex items-start gap-3">
+              <div class="relative shrink-0">
+                <div class="w-10 h-10 rounded-full bg-ink/10 dark:bg-white/10 text-ink dark:text-paper flex items-center justify-center text-xs font-medium">S</div>
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-sm font-medium truncate">Sabbir Ahmed</span>
+                  <span class="text-[9px] text-ink/40 dark:text-paper/40">Yesterday</span>
+                </div>
+                <p class="text-[10px] text-ink/50 dark:text-paper/50 mt-1">Re: Moving table</p>
+                <p class="text-[10px] text-ink/50 dark:text-paper/50 mt-1 truncate">Thank you for your help!</p>
+              </div>
+            </div>
+          </button>
+
+        </div>
+      </section>
+
+      <section id="chatPanel" class="hidden lg:flex bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl overflow-hidden flex-col">
+
+        <div class="px-4 sm:px-5 py-4 border-b border-paper3 dark:border-white/10 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+
+            <button id="backToConversations" class="lg:hidden w-8 h-8 rounded-lg hover:bg-paper2 dark:hover:bg-white/10">
+              <i class="fas fa-arrow-left text-xs"></i>
+            </button>
+
+            <div class="relative">
+              <div class="w-10 h-10 rounded-full bg-teal text-white flex items-center justify-center text-xs font-medium">R</div>
+              <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-green-500 border-2 border-white dark:border-ink"></span>
+            </div>
+
+            <div>
+              <h2 class="text-sm font-medium">Rahim Hasan</h2>
+              <p class="text-[10px] text-green-600 dark:text-green-400 mt-0.5">Online</p>
+            </div>
+          </div>
+
+          <button id="chatMenu" class="w-8 h-8 rounded-lg hover:bg-paper2 dark:hover:bg-white/10">
+            <i class="fas fa-ellipsis-vertical text-sm text-ink/40"></i>
+          </button>
+        </div>
+
+        <div class="px-4 py-3 bg-paper2 dark:bg-white/5 border-b border-paper3 dark:border-white/10">
+          <div class="flex items-center gap-2">
+
+            <div class="w-7 h-7 rounded-lg bg-teal/10 text-teal flex items-center justify-center">
+              <i class="fas fa-heart-pulse text-[10px]"></i>
+            </div>
+
+            <div>
+              <p class="text-[9px] uppercase tracking-wider font-mono text-teal">Related request</p>
+              <p class="text-xs font-medium">Need O+ blood donor</p>
+            </div>
+
+            <a href="request-details.html" class="ml-auto text-[10px] text-teal hover:underline">View</a>
+          </div>
+        </div>
+
+        <div id="messagesContainer" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
+
+          <div class="text-center">
+            <span class="text-[9px] text-ink/30 dark:text-paper/30 font-mono">TODAY</span>
+          </div>
+
+          <div class="flex items-end gap-2">
+            <div class="w-7 h-7 rounded-full bg-teal text-white flex items-center justify-center text-[9px] shrink-0">R</div>
+
+            <div class="max-w-[75%] sm:max-w-[60%]">
+              <div class="bg-paper2 dark:bg-white/10 rounded-2xl rounded-bl-md px-4 py-3">
+                <p class="text-xs leading-relaxed">Hi! I saw your request for an O+ blood donor.</p>
+              </div>
+              <span class="text-[9px] text-ink/30 dark:text-paper/30 ml-2">9:18 PM</span>
+            </div>
+          </div>
+
+          <div class="flex items-end gap-2 justify-end">
+            <div class="max-w-[75%] sm:max-w-[60%]">
+              <div class="bg-teal text-white rounded-2xl rounded-br-md px-4 py-3">
+                <p class="text-xs leading-relaxed">Thank you! We really need the donor tonight.</p>
+              </div>
+
+              <div class="flex items-center justify-end gap-1 mt-1">
+                <span class="text-[9px] text-ink/30 dark:text-paper/30">9:20 PM</span>
+                <i class="fas fa-check-double text-[9px] text-teal"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-end gap-2">
+            <div class="w-7 h-7 rounded-full bg-teal text-white flex items-center justify-center text-[9px] shrink-0">R</div>
+
+            <div class="max-w-[75%] sm:max-w-[60%]">
+              <div class="bg-paper2 dark:bg-white/10 rounded-2xl rounded-bl-md px-4 py-3">
+                <p class="text-xs leading-relaxed">I can help. What time should I come?</p>
+              </div>
+              <span class="text-[9px] text-ink/30 dark:text-paper/30 ml-2">9:22 PM</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="p-3 sm:p-4 border-t border-paper3 dark:border-white/10">
+
+          <form id="messageForm" class="flex items-end gap-2">
+
+            <button type="button" class="w-9 h-9 shrink-0 rounded-lg hover:bg-paper2 dark:hover:bg-white/10 text-ink/40 dark:text-paper/40">
+              <i class="fas fa-paperclip text-sm"></i>
+            </button>
+
+            <textarea id="messageInput" rows="1" placeholder="Write a message..." class="flex-1 resize-none bg-paper2 dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl px-3 py-2.5 text-xs outline-none focus:border-teal"></textarea>
+
+            <button type="submit" class="w-9 h-9 shrink-0 rounded-lg bg-teal hover:bg-tealLight text-white flex items-center justify-center">
+              <i class="fas fa-paper-plane text-xs"></i>
+            </button>
+
+          </form>
+
+          <p class="text-[9px] text-ink/30 dark:text-paper/30 text-center mt-2">
+            Never share passwords, OTPs or sensitive financial information.
+          </p>
+        </div>
+
+      </section>
+
+      <section id="mobileEmpty" class="lg:hidden bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl flex items-center justify-center p-8">
+        <div class="text-center">
+          <div class="w-14 h-14 rounded-full bg-teal/10 text-teal flex items-center justify-center mx-auto">
+            <i class="fas fa-message"></i>
+          </div>
+
+          <h3 class="font-display font-semibold mt-4">Select a conversation</h3>
+
+          <p class="text-xs text-ink/50 dark:text-paper/50 mt-1">
+            Choose someone from the list to start chatting.
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-ink/95 backdrop-blur-md border-t border-paper3 dark:border-white/10">
+    <div class="grid grid-cols-5">
+
+      <a href="dashboard.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <i class="fas fa-house text-sm"></i>
+        <span class="text-[9px]">Home</span>
+      </a>
+
+      <a href="find-help.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <i class="fas fa-compass text-sm"></i>
+        <span class="text-[9px]">Find</span>
+      </a>
+
+      <a href="post-request.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <div class="w-9 h-9 -mt-5 rounded-full bg-teal text-white flex items-center justify-center shadow-lg">
+          <i class="fas fa-plus"></i>
+        </div>
+        <span class="text-[9px]">Post</span>
+      </a>
+
+      <a href="messages.html" class="flex flex-col items-center gap-1 py-3 text-teal">
+        <i class="fas fa-message text-sm"></i>
+        <span class="text-[9px]">Messages</span>
+      </a>
+
+      <a href="profile.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <i class="fas fa-user text-sm"></i>
+        <span class="text-[9px]">Profile</span>
+      </a>
+
+    </div>
+  </nav>
+
+  <script src="js/script.js"></script>
+
+  <script>
+    const conversations = document.querySelectorAll(".conversation");
+    const conversationPanel = document.getElementById("conversationPanel");
+    const chatPanel = document.getElementById("chatPanel");
+    const mobileEmpty = document.getElementById("mobileEmpty");
+    const backButton = document.getElementById("backToConversations");
+    const searchInput = document.getElementById("searchConversation");
+    const messageForm = document.getElementById("messageForm");
+    const messageInput = document.getElementById("messageInput");
+    const messagesContainer = document.getElementById("messagesContainer");
+
+    conversations.forEach(conversation => {
+      conversation.addEventListener("click", function() {
+
+        conversations.forEach(item => {
+          item.classList.remove("bg-teal/5", "border-l-2", "border-l-teal");
+        });
+
+        this.classList.add("bg-teal/5", "border-l-2", "border-l-teal");
+
+        if (window.innerWidth < 1024) {
+          conversationPanel.classList.add("hidden");
+          mobileEmpty.classList.add("hidden");
+          chatPanel.classList.remove("hidden");
+          chatPanel.classList.add("flex");
+        }
+      });
+    });
+
+    backButton.addEventListener("click", function() {
+      chatPanel.classList.add("hidden");
+      chatPanel.classList.remove("flex");
+      conversationPanel.classList.remove("hidden");
+    });
+
+    searchInput.addEventListener("input", function() {
+      const searchValue = this.value.toLowerCase().trim();
+
+      conversations.forEach(conversation => {
+        const name = conversation.dataset.name.toLowerCase();
+
+        if (name.includes(searchValue)) {
+          conversation.classList.remove("hidden");
+        } else {
+          conversation.classList.add("hidden");
+        }
+      });
+    });
+
+    messageForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const message = messageInput.value.trim();
+
+      if (!message) {
+        return;
+      }
+
+      const messageWrapper = document.createElement("div");
+      messageWrapper.className = "flex items-end gap-2 justify-end";
+
+      const messageBox = document.createElement("div");
+      messageBox.className = "max-w-[75%] sm:max-w-[60%]";
+
+      const bubble = document.createElement("div");
+      bubble.className = "bg-teal text-white rounded-2xl rounded-br-md px-4 py-3";
+
+      const text = document.createElement("p");
+      text.className = "text-xs leading-relaxed";
+      text.textContent = message;
+
+      bubble.appendChild(text);
+
+      const time = document.createElement("div");
+      time.className = "flex items-center justify-end gap-1 mt-1";
+
+      const timeText = document.createElement("span");
+      timeText.className = "text-[9px] text-ink/30 dark:text-paper/30";
+
+      const now = new Date();
+
+      timeText.textContent = now.toLocaleTimeString([], {
+        hour: "numeric",
+        minute: "2-digit"
+      });
+
+      const check = document.createElement("i");
+      check.className = "fas fa-check-double text-[9px] text-teal";
+
+      time.appendChild(timeText);
+      time.appendChild(check);
+
+      messageBox.appendChild(bubble);
+      messageBox.appendChild(time);
+      messageWrapper.appendChild(messageBox);
+
+      messagesContainer.appendChild(messageWrapper);
+
+      messageInput.value = "";
+      messageInput.style.height = "auto";
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    });
+
+    messageInput.addEventListener("input", function() {
+      this.style.height = "auto";
+      this.style.height = Math.min(this.scrollHeight, 120) + "px";
+    });
+
+    window.addEventListener("resize", function() {
+      if (window.innerWidth >= 1024) {
+        conversationPanel.classList.remove("hidden");
+        chatPanel.classList.remove("hidden");
+        chatPanel.classList.add("flex");
+        mobileEmpty.classList.add("hidden");
+      }
+    });
+  </script>
+
+</body>
+</html>

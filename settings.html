@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sahay — Settings</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-paper dark:bg-ink text-ink dark:text-paper min-h-screen">
+
+  <div class="flex items-center justify-between px-4 sm:px-6 py-2 bg-white dark:bg-ink/60 border-b border-paper3 dark:border-white/10 text-xs">
+    <div id="date-time" class="font-mono text-ink/60 dark:text-paper/60"></div>
+
+    <div class="flex items-center gap-3">
+      <select id="langToggle" class="bg-paper2 dark:bg-white/10 px-2 py-1 rounded text-xs outline-none">
+        <option value="en">EN</option>
+        <option value="bn">BN</option>
+      </select>
+
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="darkToggle" class="sr-only peer">
+        <div class="w-10 h-5 bg-paper3 dark:bg-white/10 rounded-full peer-checked:bg-teal after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-full"></div>
+      </label>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-50 bg-paper/90 dark:bg-ink/90 backdrop-blur-md border-b border-paper3 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+
+      <a href="dashboard.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-full bg-teal text-white flex items-center justify-center font-display font-semibold">S</div>
+        <span class="font-display font-semibold text-lg">Sahay</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="dashboard.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">Home</a>
+        <a href="find-help.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">Find Help</a>
+        <a href="my-requests.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">My Requests</a>
+        <a href="messages.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">Messages</a>
+      </nav>
+
+      <a href="profile.html" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-teal text-white flex items-center justify-center text-xs font-medium">A</div>
+        <span class="hidden sm:block text-xs font-medium">Arju Sultana</span>
+      </a>
+
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 pb-28">
+
+    <div class="mb-6">
+      <span class="font-mono text-[10px] tracking-widest uppercase text-teal dark:text-goldLight">
+        Account controls
+      </span>
+
+      <h1 class="font-display text-3xl sm:text-4xl font-semibold mt-2">
+        Settings
+      </h1>
+
+      <p class="text-sm text-ink/60 dark:text-paper/60 mt-2">
+        Control your privacy, notifications, security and preferences.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-5">
+
+      <aside class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-3 h-fit">
+
+        <button class="settings-tab w-full flex items-center gap-3 px-3 py-3 rounded-lg bg-teal text-white text-xs text-left" data-section="general">
+          <i class="fas fa-sliders text-xs w-4 text-center"></i>
+          General
+        </button>
+
+        <button class="settings-tab w-full flex items-center gap-3 px-3 py-3 rounded-lg text-xs text-left text-ink/60 dark:text-paper/60 hover:bg-paper2 dark:hover:bg-white/5" data-section="notifications">
+          <i class="fas fa-bell text-xs w-4 text-center"></i>
+          Notifications
+        </button>
+
+        <button class="settings-tab w-full flex items-center gap-3 px-3 py-3 rounded-lg text-xs text-left text-ink/60 dark:text-paper/60 hover:bg-paper2 dark:hover:bg-white/5" data-section="privacy">
+          <i class="fas fa-shield-halved text-xs w-4 text-center"></i>
+          Privacy
+        </button>
+
+        <button class="settings-tab w-full flex items-center gap-3 px-3 py-3 rounded-lg text-xs text-left text-ink/60 dark:text-paper/60 hover:bg-paper2 dark:hover:bg-white/5" data-section="security">
+          <i class="fas fa-lock text-xs w-4 text-center"></i>
+          Security
+        </button>
+
+      </aside>
+
+
+      <div>
+
+        <section id="general" class="settings-section space-y-5">
+
+          <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-5 sm:p-6">
+
+            <div class="mb-5">
+              <h2 class="font-display text-xl font-semibold">General preferences</h2>
+              <p class="text-xs text-ink/50 dark:text-paper/50 mt-1">Customize how Sahay looks and behaves.</p>
+            </div>
+
+            <div class="space-y-4">
+
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="text-xs font-medium">Language</p>
+                  <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">Choose your preferred language.</p>
+                </div>
+
+                <select class="w-28 bg-paper2 dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-lg px-3 py-2 text-xs outline-none">
+                  <option>English</option>
+                  <option>বাংলা</option>
+                </select>
+              </div>
+
+              <div class="border-t border-paper3 dark:border-white/10"></div>
+
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="text-xs font-medium">Dark mode</p>
+                  <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">Use a darker appearance across Sahay.</p>
+                </div>
+
+                <label class="relative inline-flex items-center cursor-pointer shrink-0">
+                  <input type="checkbox" id="appearanceToggle" class="sr-only peer">
+                  <div class="w-11 h-6 bg-paper3 dark:bg-white/10 rounded-full peer-checked:bg-teal after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"></div>
+                </label>
+              </div>
+
+              <div class="border-t border-paper3 dark:border-white/10"></div>
+
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="text-xs font-medium">Remember my preference</p>
+                  <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">Keep your language and display settings on this device.</p>
+                </div>
+
+                <label class="relative inline-flex items-center cursor-pointer shrink-0">
+                  <input type="checkbox" checked class="pref-toggle sr-only peer">
+                  <div class="w-11 h-6 bg-paper3 dark:bg-white/10 rounded-full peer-checked:bg-teal after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"></div>
+                </label>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-5 sm:p-6">
+
+            <div class="mb-5">
+              <h2 class="font-display text-xl font-semibold">Location</h2>
+              <p class="text-xs text-ink/50 dark:text-paper/50 mt-1">Location helps Sahay show relevant nearby help.</p>
+            </div>
+
+            <div class="flex items-center gap-3 p-4 rounded-xl bg-paper2 dark:bg-white/5">
+
+              <div class="w-10 h-10 rounded-lg bg-teal/10 text-teal flex items-center justify-center shrink-0">
+                <i class="fas fa-location-dot text-sm"></i>
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <p class="text-xs font-medium">Chattogram</p>
+                <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">Approximate location</p>
+              </div>
+
+              <button class="text-[10px] text-teal hover:underline">Change</button>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <section id="notifications" class="settings-section hidden space-y-5">
+
+          <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-5 sm:p-6">
+
+            <div class="mb-5">
+              <h2 class="font-display text-xl font-semibold">Notification settings</h2>
+              <p class="text-xs text-ink/50 dark:text-paper/50 mt-1">Choose which updates you want to receive.</p>
+            </div>
+
+            <div class="space-y-4">
+
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="text-xs font-medium">Request activity</p>
+                  <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">Offers, updates and changes to your requests.</p>
+                </div>
+                <input type="checkbox" checked class="w-4 h-4 accent-teal">
+              </div>
+
+              <div class="border-t border-paper3 dark:border-white/10"></div>
+
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="text-xs font-medium">New messages</p>
+                  <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">Get notified when someone messages you.</p>
+                </div>
+                <input type="checkbox" checked class="w-4 h-4 accent-teal">
+              </div>
+
+              <div class="border-t border-paper3 dark:border-white/10"></div>
+
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="text-xs font-medium">Nearby help requests</p>
+                  <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">Important requests from people near you.</p>
+                </div>
+                <input type="checkbox" checked class="w-4 h-4 accent-teal">
+              </div>
+
+              <div class="border-t border-paper3 dark:border-white/10"></div>
+
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="text-xs font-medium">Community updates</p>
+                  <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">Occasional tips and community announcements.</p>
+                </div>
+                <input type="checkbox" class="w-4 h-4 accent-teal">
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-5 sm:p-6">
+
+            <h2 class="font-display text-xl font-semibold">Delivery</h2>
+
+            <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+              <label class="flex items-center gap-3 p-4 rounded-xl bg-paper2 dark:bg-white/5 cursor-pointer">
+                <input type="checkbox" checked class="w-4 h-4 accent-teal">
+                <div>
+                  <p class="text-xs font-medium">In-app</p>
+                  <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">Recommended</p>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-4 rounded-xl bg-paper2 dark:bg-white/5 cursor-pointer">
+                <input type="checkbox" class="w-4 h-4 accent-teal">
+                <div>
+                  <p class="text-xs font-medium">Email</p>
+                  <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">For important updates</p>
+                </div>
+              </label>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <section id="privacy" class="settings-section hidden space-y-5">
+
+          <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-5 sm:p-6">
+
+            <div class="mb-5">
+              <h2 class="font-display text-xl font-semibold">Privacy</h2>
+              <p class="text-xs text-ink/50 dark:text-paper/50 mt-1">Decide what other community members can see.</p>
+            </div>
+
+            <div class="space-y-4">
+
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="text-xs font-medium">Show approximate location</p>
+                  <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">Show your area instead of an exact location.</p>
+                </div>
+                <input type="checkbox" checked class="w-4 h-4 accent-teal">
+              </div>
+
+              <div class="border-t border-paper3 dark:border-white/10"></div>
+
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="text-xs font-medium">Show trust score</p>
+                  <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">Let people see your community trust score.</p>
+                </div>
+                <input type="checkbox" checked class="w-4 h-4 accent-teal">
+              </div>
+
+              <div class="border-t border-paper3 dark:border-white/10"></div>
+
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="text-xs font-medium">Allow direct messages</p>
+                  <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">Allow verified community members to message you.</p>
+                </div>
+                <input type="checkbox" checked class="w-4 h-4 accent-teal">
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="bg-ink text-paper rounded-2xl p-5 sm:p-6">
+
+            <div class="flex gap-3">
+              <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                <i class="fas fa-shield-halved text-goldLight text-sm"></i>
+              </div>
+
+              <div>
+                <h2 class="font-display text-lg font-semibold">Safety first</h2>
+                <p class="text-[10px] text-paper/60 mt-1 leading-relaxed">
+                  Never share passwords, OTPs, financial information or unnecessary personal documents with another user.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <section id="security" class="settings-section hidden space-y-5">
+
+          <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-5 sm:p-6">
+
+            <div class="mb-5">
+              <h2 class="font-display text-xl font-semibold">Password</h2>
+              <p class="text-xs text-ink/50 dark:text-paper/50 mt-1">Keep your account protected with a strong password.</p>
+            </div>
+
+            <form id="passwordForm" class="space-y-4">
+
+              <div>
+                <label class="block text-[10px] font-medium text-ink/60 dark:text-paper/60 mb-1.5">Current password</label>
+                <div class="relative">
+                  <input type="password" class="password-field w-full bg-paper2 dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-lg px-3 py-2.5 pr-10 text-xs outline-none focus:border-teal" placeholder="Current password">
+                  <button type="button" class="toggle-password absolute right-3 top-1/2 -translate-y-1/2 text-ink/40 dark:text-paper/40">
+                    <i class="fas fa-eye text-xs"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[10px] font-medium text-ink/60 dark:text-paper/60 mb-1.5">New password</label>
+                <div class="relative">
+                  <input type="password" class="password-field w-full bg-paper2 dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-lg px-3 py-2.5 pr-10 text-xs outline-none focus:border-teal" placeholder="New password">
+                  <button type="button" class="toggle-password absolute right-3 top-1/2 -translate-y-1/2 text-ink/40 dark:text-paper/40">
+                    <i class="fas fa-eye text-xs"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[10px] font-medium text-ink/60 dark:text-paper/60 mb-1.5">Confirm new password</label>
+                <div class="relative">
+                  <input type="password" class="password-field w-full bg-paper2 dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-lg px-3 py-2.5 pr-10 text-xs outline-none focus:border-teal" placeholder="Confirm new password">
+                  <button type="button" class="toggle-password absolute right-3 top-1/2 -translate-y-1/2 text-ink/40 dark:text-paper/40">
+                    <i class="fas fa-eye text-xs"></i>
+                  </button>
+                </div>
+              </div>
+
+              <button type="submit" class="bg-teal hover:bg-tealLight text-white rounded-lg px-5 py-2.5 text-xs font-medium">
+                Update password
+              </button>
+
+            </form>
+
+          </div>
+
+
+          <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-5 sm:p-6">
+
+            <h2 class="font-display text-xl font-semibold">Active sessions</h2>
+            <p class="text-xs text-ink/50 dark:text-paper/50 mt-1">Devices currently signed in to your account.</p>
+
+            <div class="mt-5 flex items-center gap-3 p-4 rounded-xl bg-paper2 dark:bg-white/5">
+
+              <div class="w-10 h-10 rounded-lg bg-teal/10 text-teal flex items-center justify-center shrink-0">
+                <i class="fas fa-desktop text-sm"></i>
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <p class="text-xs font-medium">This device</p>
+                <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">Windows • Active now</p>
+              </div>
+
+              <span class="text-[9px] px-2 py-1 rounded-full bg-teal/10 text-teal">Current</span>
+
+            </div>
+
+          </div>
+
+
+          <div class="bg-red-50 dark:bg-red-500/5 border border-red-200 dark:border-red-500/20 rounded-2xl p-5 sm:p-6">
+
+            <h2 class="font-display text-xl font-semibold text-red-700 dark:text-red-400">
+              Danger zone
+            </h2>
+
+            <p class="text-[10px] text-red-700/60 dark:text-red-300/60 mt-1">
+              These actions can affect your account permanently.
+            </p>
+
+            <button id="deleteAccount" class="mt-4 border border-red-300 dark:border-red-500/30 text-red-600 dark:text-red-400 rounded-lg px-4 py-2.5 text-xs hover:bg-red-100 dark:hover:bg-red-500/10">
+              Delete account
+            </button>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-ink/95 backdrop-blur-md border-t border-paper3 dark:border-white/10">
+
+    <div class="grid grid-cols-5">
+
+      <a href="dashboard.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <i class="fas fa-house text-sm"></i>
+        <span class="text-[9px]">Home</span>
+      </a>
+
+      <a href="find-help.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <i class="fas fa-compass text-sm"></i>
+        <span class="text-[9px]">Find</span>
+      </a>
+
+      <a href="post-request.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <div class="w-9 h-9 -mt-5 rounded-full bg-teal text-white flex items-center justify-center shadow-lg">
+          <i class="fas fa-plus"></i>
+        </div>
+        <span class="text-[9px]">Post</span>
+      </a>
+
+      <a href="messages.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <i class="fas fa-message text-sm"></i>
+        <span class="text-[9px]">Messages</span>
+      </a>
+
+      <a href="profile.html" class="flex flex-col items-center gap-1 py-3 text-teal">
+        <i class="fas fa-user text-sm"></i>
+        <span class="text-[9px]">Profile</span>
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <div id="toast" class="fixed bottom-20 sm:bottom-6 right-4 z-[100] hidden bg-ink text-paper px-4 py-3 rounded-lg shadow-lg text-xs">
+    Settings saved.
+  </div>
+
+
+  <script src="js/script.js"></script>
+
+  <script>
+    const tabs = document.querySelectorAll(".settings-tab");
+    const sections = document.querySelectorAll(".settings-section");
+    const toast = document.getElementById("toast");
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.remove("hidden");
+
+      setTimeout(function() {
+        toast.classList.add("hidden");
+      }, 2200);
+    }
+
+    tabs.forEach(function(tab) {
+      tab.addEventListener("click", function() {
+
+        tabs.forEach(function(item) {
+          item.classList.remove("bg-teal", "text-white");
+          item.classList.add("text-ink/60", "dark:text-paper/60", "hover:bg-paper2", "dark:hover:bg-white/5");
+        });
+
+        tab.classList.remove("text-ink/60", "dark:text-paper/60", "hover:bg-paper2", "dark:hover:bg-white/5");
+        tab.classList.add("bg-teal", "text-white");
+
+        sections.forEach(function(section) {
+          section.classList.add("hidden");
+        });
+
+        document.getElementById(tab.dataset.section).classList.remove("hidden");
+      });
+    });
+
+    const appearanceToggle = document.getElementById("appearanceToggle");
+    const darkToggle = document.getElementById("darkToggle");
+
+    appearanceToggle.addEventListener("change", function() {
+      if (this.checked) {
+        document.documentElement.classList.add("dark");
+        if (darkToggle) darkToggle.checked = true;
+      } else {
+        document.documentElement.classList.remove("dark");
+        if (darkToggle) darkToggle.checked = false;
+      }
+
+      showToast("Appearance updated.");
+    });
+
+    document.querySelectorAll(".pref-toggle, input[type='checkbox'], input[type='radio'], select").forEach(function(input) {
+      input.addEventListener("change", function() {
+        if (input.id !== "appearanceToggle" && input.id !== "darkToggle") {
+          showToast("Preference updated.");
+        }
+      });
+    });
+
+    document.querySelectorAll(".toggle-password").forEach(function(button) {
+      button.addEventListener("click", function() {
+        const input = this.parentElement.querySelector(".password-field");
+        const icon = this.querySelector("i");
+
+        if (input.type === "password") {
+          input.type = "text";
+          icon.classList.remove("fa-eye");
+          icon.classList.add("fa-eye-slash");
+        } else {
+          input.type = "password";
+          icon.classList.remove("fa-eye-slash");
+          icon.classList.add("fa-eye");
+        }
+      });
+    });
+
+    document.getElementById("passwordForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const fields = this.querySelectorAll(".password-field");
+      const newPassword = fields[1].value;
+      const confirmPassword = fields[2].value;
+
+      if (!newPassword || !confirmPassword) {
+        showToast("Please fill in the password fields.");
+        return;
+      }
+
+      if (newPassword !== confirmPassword) {
+        showToast("New passwords do not match.");
+        return;
+      }
+
+      showToast("Password updated successfully.");
+      this.reset();
+    });
+
+    document.getElementById("deleteAccount").addEventListener("click", function() {
+      const confirmed = confirm("Are you sure you want to delete your account?");
+
+      if (confirmed) {
+        showToast("Account deletion request submitted.");
+      }
+    });
+  </script>
+
+</body>
+</html>

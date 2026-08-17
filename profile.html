@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sahay — Profile</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-paper dark:bg-ink text-ink dark:text-paper min-h-screen">
+
+  <div class="flex items-center justify-between px-4 sm:px-6 py-2 bg-white dark:bg-ink/60 border-b border-paper3 dark:border-white/10 text-xs">
+    <div id="date-time" class="font-mono text-ink/60 dark:text-paper/60"></div>
+
+    <div class="flex items-center gap-3">
+      <select id="langToggle" class="bg-paper2 dark:bg-white/10 px-2 py-1 rounded text-xs outline-none">
+        <option value="en">EN</option>
+        <option value="bn">BN</option>
+      </select>
+
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="darkToggle" class="sr-only peer">
+        <div class="w-10 h-5 bg-paper3 dark:bg-white/10 rounded-full peer-checked:bg-teal after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-full"></div>
+      </label>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-50 bg-paper/90 dark:bg-ink/90 backdrop-blur-md border-b border-paper3 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+
+      <a href="dashboard.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-full bg-teal text-white flex items-center justify-center font-display font-semibold">S</div>
+        <span class="font-display font-semibold text-lg">Sahay</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="dashboard.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">Home</a>
+        <a href="find-help.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">Find Help</a>
+        <a href="my-requests.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">My Requests</a>
+        <a href="messages.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">Messages</a>
+      </nav>
+
+      <a href="profile.html" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-teal text-white flex items-center justify-center text-xs font-medium">A</div>
+        <span class="hidden sm:block text-xs font-medium">Arju Sultana</span>
+      </a>
+
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 pb-28">
+
+    <div class="mb-6">
+      <span class="font-mono text-[10px] tracking-widest uppercase text-teal dark:text-goldLight">
+        Your identity
+      </span>
+
+      <h1 class="font-display text-3xl sm:text-4xl font-semibold mt-2">
+        My Profile
+      </h1>
+
+      <p class="text-sm text-ink/60 dark:text-paper/60 mt-2">
+        Manage your profile, trust information and account details.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+
+      <section class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-5 sm:p-6">
+
+        <div class="flex flex-col items-center text-center">
+
+          <div class="relative">
+            <div class="w-24 h-24 rounded-full bg-teal text-white flex items-center justify-center text-3xl font-display font-semibold">
+              A
+            </div>
+
+            <button id="changePhoto"
+                    class="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-white dark:bg-ink border border-paper3 dark:border-white/10 shadow-sm flex items-center justify-center hover:text-teal">
+              <i class="fas fa-camera text-xs"></i>
+            </button>
+          </div>
+
+          <h2 class="font-display text-xl font-semibold mt-4">
+            Arju Sultana
+          </h2>
+
+          <p class="text-xs text-ink/50 dark:text-paper/50 mt-1">
+            Chattogram, Bangladesh
+          </p>
+
+          <div class="flex items-center gap-2 mt-4">
+            <span class="flex items-center gap-1.5 text-[10px] px-2.5 py-1 rounded-full bg-teal/10 text-teal">
+              <i class="fas fa-circle-check"></i>
+              Verified
+            </span>
+
+            <span class="flex items-center gap-1.5 text-[10px] px-2.5 py-1 rounded-full bg-gold/10 text-gold">
+              Trust 4.8
+            </span>
+          </div>
+
+        </div>
+
+        <div class="border-t border-paper3 dark:border-white/10 mt-6 pt-5">
+
+          <div class="grid grid-cols-3 text-center">
+
+            <div>
+              <p class="font-display text-xl font-semibold">12</p>
+              <p class="text-[9px] text-ink/50 dark:text-paper/50 mt-1">Requests</p>
+            </div>
+
+            <div class="border-x border-paper3 dark:border-white/10">
+              <p class="font-display text-xl font-semibold">8</p>
+              <p class="text-[9px] text-ink/50 dark:text-paper/50 mt-1">Helped</p>
+            </div>
+
+            <div>
+              <p class="font-display text-xl font-semibold">4.8</p>
+              <p class="text-[9px] text-ink/50 dark:text-paper/50 mt-1">Rating</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section class="lg:col-span-2 bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-5 sm:p-6">
+
+        <div class="flex items-center justify-between mb-5">
+
+          <div>
+            <h2 class="font-display text-xl font-semibold">
+              Personal information
+            </h2>
+
+            <p class="text-xs text-ink/50 dark:text-paper/50 mt-1">
+              Keep your information up to date.
+            </p>
+          </div>
+
+          <button id="editProfile"
+                  class="flex items-center gap-2 text-xs text-teal hover:underline">
+            <i class="fas fa-pen text-[10px]"></i>
+            Edit
+          </button>
+
+        </div>
+
+
+        <form id="profileForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+          <div>
+            <label class="block text-[10px] font-medium text-ink/60 dark:text-paper/60 mb-1.5">
+              Full name
+            </label>
+
+            <input id="fullName"
+                   type="text"
+                   value="Arju Sultana"
+                   disabled
+                   class="w-full bg-paper2 dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-lg px-3 py-2.5 text-xs outline-none disabled:opacity-70 focus:border-teal">
+          </div>
+
+
+          <div>
+            <label class="block text-[10px] font-medium text-ink/60 dark:text-paper/60 mb-1.5">
+              Phone number
+            </label>
+
+            <input id="phone"
+                   type="text"
+                   value="01XXXXXXXXX"
+                   disabled
+                   class="w-full bg-paper2 dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-lg px-3 py-2.5 text-xs outline-none disabled:opacity-70 focus:border-teal">
+          </div>
+
+
+          <div>
+            <label class="block text-[10px] font-medium text-ink/60 dark:text-paper/60 mb-1.5">
+              Email
+            </label>
+
+            <input id="email"
+                   type="email"
+                   value="you@email.com"
+                   disabled
+                   class="w-full bg-paper2 dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-lg px-3 py-2.5 text-xs outline-none disabled:opacity-70 focus:border-teal">
+          </div>
+
+
+          <div>
+            <label class="block text-[10px] font-medium text-ink/60 dark:text-paper/60 mb-1.5">
+              Location
+            </label>
+
+            <input id="location"
+                   type="text"
+                   value="Chattogram"
+                   disabled
+                   class="w-full bg-paper2 dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-lg px-3 py-2.5 text-xs outline-none disabled:opacity-70 focus:border-teal">
+          </div>
+
+
+          <div>
+            <label class="block text-[10px] font-medium text-ink/60 dark:text-paper/60 mb-1.5">
+              Occupation
+            </label>
+
+            <input id="occupation"
+                   type="text"
+                   value="Student"
+                   disabled
+                   class="w-full bg-paper2 dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-lg px-3 py-2.5 text-xs outline-none disabled:opacity-70 focus:border-teal">
+          </div>
+
+
+          <div>
+            <label class="block text-[10px] font-medium text-ink/60 dark:text-paper/60 mb-1.5">
+              Preferred language
+            </label>
+
+            <select id="language"
+                    disabled
+                    class="w-full bg-paper2 dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-lg px-3 py-2.5 text-xs outline-none disabled:opacity-70 focus:border-teal">
+              <option>English</option>
+              <option>বাংলা</option>
+            </select>
+          </div>
+
+
+          <div class="sm:col-span-2">
+            <label class="block text-[10px] font-medium text-ink/60 dark:text-paper/60 mb-1.5">
+              About me
+            </label>
+
+            <textarea id="about"
+                      rows="3"
+                      disabled
+                      class="w-full resize-none bg-paper2 dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-lg px-3 py-2.5 text-xs outline-none disabled:opacity-70 focus:border-teal">I like helping people in my community and sharing useful skills.</textarea>
+          </div>
+
+
+          <div id="formActions" class="sm:col-span-2 hidden justify-end gap-2 pt-2">
+
+            <button type="button"
+                    id="cancelEdit"
+                    class="px-4 py-2.5 rounded-lg border border-paper3 dark:border-white/10 text-xs hover:bg-paper2 dark:hover:bg-white/5">
+              Cancel
+            </button>
+
+            <button type="submit"
+                    class="px-5 py-2.5 rounded-lg bg-teal hover:bg-tealLight text-white text-xs font-medium">
+              Save changes
+            </button>
+
+          </div>
+
+        </form>
+
+      </section>
+
+
+      <section class="lg:col-span-2 bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-5 sm:p-6">
+
+        <div class="flex items-center justify-between mb-5">
+
+          <div>
+            <h2 class="font-display text-xl font-semibold">
+              Verification
+            </h2>
+
+            <p class="text-xs text-ink/50 dark:text-paper/50 mt-1">
+              Verified information helps build trust.
+            </p>
+          </div>
+
+          <span class="text-[10px] px-2.5 py-1 rounded-full bg-teal/10 text-teal">
+            3 / 4 verified
+          </span>
+
+        </div>
+
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+          <div class="flex items-center gap-3 p-4 rounded-xl bg-paper2 dark:bg-white/5">
+
+            <div class="w-9 h-9 rounded-lg bg-teal/10 text-teal flex items-center justify-center">
+              <i class="fas fa-mobile-screen text-xs"></i>
+            </div>
+
+            <div class="flex-1">
+              <p class="text-xs font-medium">Phone number</p>
+              <p class="text-[10px] text-ink/50 dark:text-paper/50 mt-1">Verified</p>
+            </div>
+
+            <i class="fas fa-circle-check text-teal text-sm"></i>
+
+          </div>
+
+
+          <div class="flex items-center gap-3 p-4 rounded-xl bg-paper2 dark:bg-white/5">
+
+            <div class="w-9 h-9 rounded-lg bg-teal/10 text-teal flex items-center justify-center">
+              <i class="fas fa-envelope text-xs"></i>
+            </div>
+
+            <div class="flex-1">
+              <p class="text-xs font-medium">Email address</p>
+              <p class="text-[10px] text-ink/50 dark:text-paper/50 mt-1">Verified</p>
+            </div>
+
+            <i class="fas fa-circle-check text-teal text-sm"></i>
+
+          </div>
+
+
+          <div class="flex items-center gap-3 p-4 rounded-xl bg-paper2 dark:bg-white/5">
+
+            <div class="w-9 h-9 rounded-lg bg-teal/10 text-teal flex items-center justify-center">
+              <i class="fab fa-google text-xs"></i>
+            </div>
+
+            <div class="flex-1">
+              <p class="text-xs font-medium">Google account</p>
+              <p class="text-[10px] text-ink/50 dark:text-paper/50 mt-1">Connected</p>
+            </div>
+
+            <i class="fas fa-circle-check text-teal text-sm"></i>
+
+          </div>
+
+
+          <div class="flex items-center gap-3 p-4 rounded-xl bg-paper2 dark:bg-white/5">
+
+            <div class="w-9 h-9 rounded-lg bg-gold/10 text-gold flex items-center justify-center">
+              <i class="fas fa-id-card text-xs"></i>
+            </div>
+
+            <div class="flex-1">
+              <p class="text-xs font-medium">National ID</p>
+              <p class="text-[10px] text-ink/50 dark:text-paper/50 mt-1">Not verified</p>
+            </div>
+
+            <button class="text-[10px] text-teal hover:underline">
+              Verify
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section class="lg:col-span-1 bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-5 sm:p-6">
+
+        <h2 class="font-display text-xl font-semibold">
+          Trust score
+        </h2>
+
+        <p class="text-xs text-ink/50 dark:text-paper/50 mt-1">
+          Based on your activity and feedback.
+        </p>
+
+
+        <div class="flex items-center gap-5 mt-6">
+
+          <div class="relative w-24 h-24 shrink-0">
+
+            <svg class="w-24 h-24 -rotate-90" viewBox="0 0 100 100">
+
+              <circle cx="50" cy="50" r="42"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="8"
+                      class="text-paper3 dark:text-white/10"/>
+
+              <circle cx="50" cy="50" r="42"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="8"
+                      stroke-linecap="round"
+                      stroke-dasharray="264"
+                      stroke-dashoffset="26"
+                      class="text-teal"/>
+
+            </svg>
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+
+              <span class="font-display text-xl font-semibold">
+                4.8
+              </span>
+
+              <span class="text-[8px] text-ink/40 dark:text-paper/40">
+                / 5.0
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <div class="flex items-center gap-1 text-gold text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-stroke"></i>
+            </div>
+
+            <p class="text-[10px] text-ink/50 dark:text-paper/50 mt-2">
+              From 8 completed helps
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="border-t border-paper3 dark:border-white/10 mt-6 pt-5 space-y-3">
+
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-ink/50 dark:text-paper/50">Reliability</span>
+            <span class="font-medium">Excellent</span>
+          </div>
+
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-ink/50 dark:text-paper/50">Response</span>
+            <span class="font-medium">Fast</span>
+          </div>
+
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-ink/50 dark:text-paper/50">Community</span>
+            <span class="font-medium">Active</span>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section class="lg:col-span-1 bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-5 sm:p-6">
+
+        <h2 class="font-display text-xl font-semibold">
+          Account
+        </h2>
+
+        <div class="mt-4 space-y-2">
+
+          <a href="settings.html"
+             class="flex items-center gap-3 p-3 rounded-lg hover:bg-paper2 dark:hover:bg-white/5">
+
+            <div class="w-8 h-8 rounded-lg bg-paper2 dark:bg-white/10 flex items-center justify-center">
+              <i class="fas fa-gear text-xs"></i>
+            </div>
+
+            <div class="flex-1">
+              <p class="text-xs font-medium">Settings</p>
+              <p class="text-[9px] text-ink/40 dark:text-paper/40">Privacy and preferences</p>
+            </div>
+
+            <i class="fas fa-chevron-right text-[9px] text-ink/30"></i>
+
+          </a>
+
+
+          <button id="logoutBtn"
+                  class="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-red-50 dark:hover:bg-red-500/10 text-red-600 dark:text-red-400">
+
+            <div class="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center">
+              <i class="fas fa-right-from-bracket text-xs"></i>
+            </div>
+
+            <span class="text-xs font-medium">
+              Log out
+            </span>
+
+          </button>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-ink/95 backdrop-blur-md border-t border-paper3 dark:border-white/10">
+
+    <div class="grid grid-cols-5">
+
+      <a href="dashboard.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <i class="fas fa-house text-sm"></i>
+        <span class="text-[9px]">Home</span>
+      </a>
+
+      <a href="find-help.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <i class="fas fa-compass text-sm"></i>
+        <span class="text-[9px]">Find</span>
+      </a>
+
+      <a href="post-request.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <div class="w-9 h-9 -mt-5 rounded-full bg-teal text-white flex items-center justify-center shadow-lg">
+          <i class="fas fa-plus"></i>
+        </div>
+        <span class="text-[9px]">Post</span>
+      </a>
+
+      <a href="messages.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <i class="fas fa-message text-sm"></i>
+        <span class="text-[9px]">Messages</span>
+      </a>
+
+      <a href="profile.html" class="flex flex-col items-center gap-1 py-3 text-teal">
+        <i class="fas fa-user text-sm"></i>
+        <span class="text-[9px]">Profile</span>
+      </a>
+
+    </div>
+  </nav>
+
+
+  <div id="toast"
+       class="fixed bottom-20 sm:bottom-6 right-4 z-[100] hidden bg-ink text-paper px-4 py-3 rounded-lg shadow-lg text-xs">
+    Profile updated successfully.
+  </div>
+
+
+  <script src="js/script.js"></script>
+
+  <script>
+    const editButton = document.getElementById("editProfile");
+    const cancelButton = document.getElementById("cancelEdit");
+    const profileForm = document.getElementById("profileForm");
+    const formActions = document.getElementById("formActions");
+    const toast = document.getElementById("toast");
+
+    const fields = [
+      document.getElementById("fullName"),
+      document.getElementById("phone"),
+      document.getElementById("email"),
+      document.getElementById("location"),
+      document.getElementById("occupation"),
+      document.getElementById("language"),
+      document.getElementById("about")
+    ];
+
+    let originalValues = {};
+
+    function startEditing() {
+      fields.forEach(field => {
+        originalValues[field.id] = field.value;
+        field.disabled = false;
+      });
+
+      formActions.classList.remove("hidden");
+      formActions.classList.add("flex");
+      editButton.classList.add("hidden");
+    }
+
+    function cancelEditing() {
+      fields.forEach(field => {
+        field.value = originalValues[field.id];
+        field.disabled = true;
+      });
+
+      formActions.classList.add("hidden");
+      formActions.classList.remove("flex");
+      editButton.classList.remove("hidden");
+    }
+
+    editButton.addEventListener("click", startEditing);
+    cancelButton.addEventListener("click", cancelEditing);
+
+    profileForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      fields.forEach(field => {
+        field.disabled = true;
+      });
+
+      formActions.classList.add("hidden");
+      formActions.classList.remove("flex");
+      editButton.classList.remove("hidden");
+
+      toast.classList.remove("hidden");
+
+      setTimeout(() => {
+        toast.classList.add("hidden");
+      }, 2500);
+    });
+
+    document.getElementById("logoutBtn").addEventListener("click", function() {
+      const confirmed = confirm("Are you sure you want to log out?");
+
+      if (confirmed) {
+        window.location.href = "login.html";
+      }
+    });
+
+    document.getElementById("changePhoto").addEventListener("click", function() {
+      alert("Profile photo upload will be connected to the backend later.");
+    });
+  </script>
+
+</body>
+</html>

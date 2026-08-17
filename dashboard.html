@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sahay — Dashboard</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="js/tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-paper dark:bg-ink text-ink dark:text-paper transition-colors min-h-screen">
+
+  <!-- TOP BAR -->
+
+  <div class="flex items-center justify-between px-4 py-2
+              bg-white dark:bg-ink/60
+              border-b border-paper3 dark:border-white/10 text-xs">
+
+
+<div id="date-time"
+     class="font-mono text-ink/60 dark:text-paper/60">
+</div>
+
+<div class="flex items-center gap-3">
+
+  <!-- Language -->
+  <select id="langToggle"
+          class="bg-paper2 dark:bg-white/10 px-2 py-1 rounded text-xs">
+    <option value="en">EN</option>
+    <option value="bn">BN</option>
+  </select>
+
+  <!-- Dark mode -->
+  <label class="relative inline-flex items-center cursor-pointer">
+    <input type="checkbox" id="darkToggle" class="sr-only peer">
+
+    <div class="w-10 h-5 bg-paper3 rounded-full
+                peer peer-checked:bg-teal
+                after:content-['']
+                after:absolute after:top-[2px] after:left-[2px]
+                after:bg-white after:rounded-full
+                after:h-4 after:w-4 after:transition-all
+                peer-checked:after:translate-x-full">
+    </div>
+  </label>
+
+</div>
+
+
+  </div>
+
+  <!-- NAVBAR -->
+
+  <header class="sticky top-0 z-50
+                 bg-paper/90 dark:bg-ink/90
+                 backdrop-blur-md
+                 border-b border-paper3 dark:border-white/10">
+
+
+<div class="max-w-7xl mx-auto px-5 py-3
+            flex items-center justify-between">
+
+  <!-- Logo -->
+  <a href="index.html"
+     class="flex items-center gap-2">
+
+    <div class="w-9 h-9 rounded-full bg-teal
+                flex items-center justify-center
+                text-white font-display font-semibold">
+      S
+    </div>
+
+    <span class="font-display font-semibold text-lg">
+      Sahay
+    </span>
+
+  </a>
+
+
+  <!-- Desktop search -->
+  <div class="hidden md:flex items-center
+              bg-white dark:bg-white/5
+              border border-paper3 dark:border-white/10
+              rounded-full px-4 py-2 w-80">
+
+    <i class="fas fa-search text-ink/30 dark:text-paper/30 text-sm mr-2"></i>
+
+    <input
+      type="text"
+      placeholder="Search people, services, requests..."
+      class="bg-transparent outline-none w-full text-sm">
+
+  </div>
+
+
+  <!-- Right -->
+  <div class="flex items-center gap-4">
+
+    <button class="relative text-ink/60 dark:text-paper/60
+                   hover:text-teal">
+
+      <i class="fas fa-bell"></i>
+
+      <span class="absolute -top-1.5 -right-1.5
+                   w-2 h-2 bg-gold rounded-full">
+      </span>
+
+    </button>
+
+
+    <a href="profile.html"
+       class="flex items-center gap-2">
+
+      <div class="w-8 h-8 rounded-full
+                  bg-teal text-white
+                  flex items-center justify-center
+                  text-xs font-medium">
+        A
+      </div>
+
+      <div class="hidden sm:block">
+        <div class="text-xs font-medium">
+          Arju Sultana
+        </div>
+
+        <div class="text-[10px] text-ink/40 dark:text-paper/40">
+          Rangunia
+        </div>
+      </div>
+
+    </a>
+
+  </div>
+
+</div>
+
+
+  </header>
+
+  <!-- MAIN LAYOUT -->
+
+  <div class="max-w-7xl mx-auto px-5 py-8
+              grid grid-cols-1 lg:grid-cols-[220px_1fr]
+              gap-8">
+
+
+<!-- SIDEBAR -->
+<aside class="hidden lg:block">
+
+  <nav class="space-y-1 sticky top-24">
+
+    <a href="dashboard.html"
+       class="flex items-center gap-3
+              px-4 py-2.5 rounded-lg
+              bg-teal text-white text-sm font-medium">
+
+      <i class="fas fa-house w-4"></i>
+      Dashboard
+
+    </a>
+
+
+    <a href="find-help.html"
+       class="flex items-center gap-3
+              px-4 py-2.5 rounded-lg
+              text-sm text-ink/60 dark:text-paper/60
+              hover:bg-paper2 dark:hover:bg-white/5
+              hover:text-teal">
+
+      <i class="fas fa-compass w-4"></i>
+      Find Help
+
+    </a>
+
+
+    <a href="my-requests.html"
+       class="flex items-center gap-3
+              px-4 py-2.5 rounded-lg
+              text-sm text-ink/60 dark:text-paper/60
+              hover:bg-paper2 dark:hover:bg-white/5">
+
+      <i class="fas fa-clipboard-list w-4"></i>
+      My Requests
+
+    </a>
+
+
+    <a href="messages.html"
+       class="flex items-center gap-3
+              px-4 py-2.5 rounded-lg
+              text-sm text-ink/60 dark:text-paper/60
+              hover:bg-paper2 dark:hover:bg-white/5">
+
+      <i class="fas fa-message w-4"></i>
+      Messages
+
+      <span class="ml-auto bg-gold text-ink
+                   text-[10px] rounded-full
+                   px-1.5 py-0.5">
+        2
+      </span>
+
+    </a>
+
+
+    <a href="saved.html"
+       class="flex items-center gap-3
+              px-4 py-2.5 rounded-lg
+              text-sm text-ink/60 dark:text-paper/60
+              hover:bg-paper2 dark:hover:bg-white/5">
+
+      <i class="fas fa-bookmark w-4"></i>
+      Saved
+
+    </a>
+
+
+    <a href="profile.html"
+       class="flex items-center gap-3
+              px-4 py-2.5 rounded-lg
+              text-sm text-ink/60 dark:text-paper/60
+              hover:bg-paper2 dark:hover:bg-white/5">
+
+      <i class="fas fa-user w-4"></i>
+      Profile
+
+    </a>
+
+
+    <div class="pt-5 mt-5
+                border-t border-paper3 dark:border-white/10">
+
+      <a href="index.html"
+         class="flex items-center gap-3
+                px-4 py-2.5 rounded-lg
+                text-sm text-ink/50 dark:text-paper/50
+                hover:text-teal">
+
+        <i class="fas fa-arrow-left w-4"></i>
+        Back to Sahay
+
+      </a>
+
+    </div>
+
+  </nav>
+
+</aside>
+
+
+<!-- CONTENT -->
+<main>
+
+
+  <!-- GREETING -->
+  <div class="flex flex-col sm:flex-row
+              sm:items-end sm:justify-between
+              gap-4 mb-8">
+
+    <div>
+
+      <span class="font-mono text-xs tracking-widest
+                   uppercase text-teal dark:text-goldLight">
+        Your dashboard
+      </span>
+
+      <h1 class="font-display text-3xl
+                 md:text-4xl font-semibold mt-2">
+        Good afternoon, Arju.
+      </h1>
+
+      <p class="text-sm text-ink/60
+                dark:text-paper/60 mt-2">
+        What can Sahay help you with today?
+      </p>
+
+    </div>
+
+
+    <a href="post-request.html"
+       class="inline-flex items-center justify-center
+              gap-2 bg-teal hover:bg-tealLight
+              text-white px-5 py-2.5
+              rounded-lg text-sm font-medium
+              transition-colors">
+
+      <i class="fas fa-plus"></i>
+      Post a request
+
+    </a>
+
+  </div>
+
+   <!-- SERVICE MODULES -->
+
+<section class="mb-10">
+
+  <div class="flex items-center justify-between mb-4">
+    <div>
+      <h2 class="font-display text-xl font-semibold">
+        What do you need?
+      </h2>
+
+
+  <p class="text-xs text-ink/50 dark:text-paper/50 mt-1">
+    Choose a service to get started.
+  </p>
+</div>
+
+
+  </div>
+
+  <!-- RESPONSIVE MODULE GRID -->
+
+  <div class="grid grid-cols-1 min-[420px]:grid-cols-2
+              md:grid-cols-2 xl:grid-cols-4
+              gap-3 sm:gap-4">
+
+
+<!-- MEDICAL -->
+<a href="medical.html"
+   class="group relative
+          min-w-0
+          bg-paper2 dark:bg-white/5
+          rounded-2xl
+          p-4 sm:p-5
+          border border-transparent
+          hover:border-teal
+          hover:-translate-y-0.5
+          transition-all duration-200">
+
+  <div class="flex items-start justify-between gap-3">
+
+    <div class="w-10 h-10 shrink-0
+                rounded-xl
+                bg-teal/10
+                flex items-center justify-center
+                text-teal dark:text-tealLight">
+
+      <i class="fas fa-briefcase-medical"></i>
+
+    </div>
+
+    <i class="fas fa-arrow-up-right-from-square
+              text-[10px]
+              text-ink/20 dark:text-paper/20
+              group-hover:text-teal
+              transition-colors">
+    </i>
+
+  </div>
+
+
+  <div class="mt-4 min-w-0">
+
+    <h3 class="font-display font-semibold
+               text-sm sm:text-base
+               truncate">
+
+      Medical
+
+    </h3>
+
+    <p class="text-[11px] sm:text-xs
+              text-ink/50 dark:text-paper/50
+              mt-1
+              leading-relaxed">
+
+      Doctors, blood & hospitals
+
+    </p>
+
+  </div>
+
+
+  <span class="inline-block mt-4
+               text-[9px] sm:text-[10px]
+               font-mono
+               text-gold">
+
+    EXPLORE →
+
+  </span>
+
+</a>
+
+
+<!-- CIVIC -->
+<a href="civic.html"
+   class="group relative
+          min-w-0
+          bg-paper2 dark:bg-white/5
+          rounded-2xl
+          p-4 sm:p-5
+          border border-transparent
+          hover:border-teal
+          hover:-translate-y-0.5
+          transition-all duration-200">
+
+  <div class="flex items-start justify-between gap-3">
+
+    <div class="w-10 h-10 shrink-0
+                rounded-xl
+                bg-gold/10
+                flex items-center justify-center
+                text-gold">
+
+      <i class="fas fa-road"></i>
+
+    </div>
+
+    <i class="fas fa-arrow-up-right-from-square
+              text-[10px]
+              text-ink/20 dark:text-paper/20
+              group-hover:text-gold
+              transition-colors">
+    </i>
+
+  </div>
+
+
+  <div class="mt-4 min-w-0">
+
+    <h3 class="font-display font-semibold
+               text-sm sm:text-base
+               truncate">
+
+      Civic
+
+    </h3>
+
+    <p class="text-[11px] sm:text-xs
+              text-ink/50 dark:text-paper/50
+              mt-1
+              leading-relaxed">
+
+      Report local issues
+
+    </p>
+
+  </div>
+
+
+  <span class="inline-block mt-4
+               text-[9px] sm:text-[10px]
+               font-mono
+               text-gold">
+
+    REPORT →
+
+  </span>
+
+</a>
+
+
+<!-- NEIGHBORHOOD -->
+<a href="neighborhood.html"
+   class="group relative
+          min-w-0
+          bg-paper2 dark:bg-white/5
+          rounded-2xl
+          p-4 sm:p-5
+          border border-transparent
+          hover:border-teal
+          hover:-translate-y-0.5
+          transition-all duration-200">
+
+  <div class="flex items-start justify-between gap-3">
+
+    <div class="w-10 h-10 shrink-0
+                rounded-xl
+                bg-teal/10
+                flex items-center justify-center
+                text-teal dark:text-tealLight">
+
+      <i class="fas fa-people-roof"></i>
+
+    </div>
+
+    <i class="fas fa-arrow-up-right-from-square
+              text-[10px]
+              text-ink/20 dark:text-paper/20
+              group-hover:text-teal
+              transition-colors">
+    </i>
+
+  </div>
+
+
+  <div class="mt-4 min-w-0">
+
+    <h3 class="font-display font-semibold
+               text-sm sm:text-base
+               truncate">
+
+      Neighborhood
+
+    </h3>
+
+    <p class="text-[11px] sm:text-xs
+              text-ink/50 dark:text-paper/50
+              mt-1
+              leading-relaxed">
+
+      Everyday local help
+
+    </p>
+
+  </div>
+
+
+  <span class="inline-block mt-4
+               text-[9px] sm:text-[10px]
+               font-mono
+               text-gold">
+
+    FIND HELP →
+
+  </span>
+
+</a>
+
+
+<!-- STUDENT -->
+<a href="student.html"
+   class="group relative
+          min-w-0
+          bg-paper2 dark:bg-white/5
+          rounded-2xl
+          p-4 sm:p-5
+          border border-transparent
+          hover:border-teal
+          hover:-translate-y-0.5
+          transition-all duration-200">
+
+  <div class="flex items-start justify-between gap-3">
+
+    <div class="w-10 h-10 shrink-0
+                rounded-xl
+                bg-gold/10
+                flex items-center justify-center
+                text-gold">
+
+      <i class="fas fa-graduation-cap"></i>
+
+    </div>
+
+    <i class="fas fa-arrow-up-right-from-square
+              text-[10px]
+              text-ink/20 dark:text-paper/20
+              group-hover:text-gold
+              transition-colors">
+    </i>
+
+  </div>
+
+
+  <div class="mt-4 min-w-0">
+
+    <h3 class="font-display font-semibold
+               text-sm sm:text-base
+               truncate">
+
+      Student
+
+    </h3>
+
+    <p class="text-[11px] sm:text-xs
+              text-ink/50 dark:text-paper/50
+              mt-1
+              leading-relaxed">
+
+      Tutors & study support
+
+    </p>
+
+  </div>
+
+
+  <span class="inline-block mt-4
+               text-[9px] sm:text-[10px]
+               font-mono
+               text-gold">
+
+    EXPLORE →
+
+  </span>
+
+</a>
+
+
+  </div>
+
+</section>
+
+
+
+  <!-- CONTENT GRID -->
+  <div class="grid grid-cols-1 xl:grid-cols-[1fr_300px]
+              gap-6">
+
+
+    <!-- COMMUNITY FEED -->
+    <section>
+
+      <div class="flex items-center
+                  justify-between mb-4">
+
+        <div>
+
+          <h2 class="font-display text-xl font-semibold">
+            Nearby requests
+          </h2>
+
+          <p class="text-xs text-ink/50
+                    dark:text-paper/50 mt-1">
+            People around Rangunia who need help.
+          </p>
+
+        </div>
+
+        <a href="find-help.html"
+           class="text-xs text-teal
+                  dark:text-goldLight
+                  hover:underline">
+          View all →
+        </a>
+
+      </div>
+
+
+      <div class="space-y-3">
+
+
+        <!-- REQUEST 1 -->
+        <article class="bg-white dark:bg-white/5
+                        border border-paper3
+                        dark:border-white/10
+                        rounded-xl p-4
+                        hover:border-teal
+                        transition-colors">
+
+          <div class="flex items-start
+                      justify-between gap-3">
+
+            <div class="flex items-center gap-2">
+
+              <div class="w-8 h-8 rounded-full
+                          bg-teal text-white
+                          flex items-center justify-center
+                          text-xs">
+                R
+              </div>
+
+              <div>
+
+                <div class="text-xs font-medium">
+                  Rahim Hasan
+                </div>
+
+                <div class="text-[10px]
+                            text-ink/40
+                            dark:text-paper/40">
+                  12 min ago · Kodala
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <span class="font-mono text-[9px]
+                         uppercase text-gold">
+              Neighborhood
+            </span>
+
+          </div>
+
+
+          <h3 class="font-medium text-sm mt-4">
+            Need someone to pick up medicine
+            from Kodala bazar pharmacy
+          </h3>
+
+
+          <p class="text-xs text-ink/50
+                    dark:text-paper/50 mt-1">
+            Looking for someone nearby who can
+            collect medicine and deliver it.
+          </p>
+
+
+          <div class="flex items-center
+                      justify-between mt-4">
+
+            <div class="flex items-center gap-3
+                        text-[10px]
+                        text-ink/40
+                        dark:text-paper/40">
+
+              <span>
+                <i class="fas fa-location-dot mr-1"></i>
+                1.2 km
+              </span>
+
+              <span>
+                <i class="fas fa-comment mr-1"></i>
+                3 responses
+              </span>
+
+            </div>
+
+
+            <button
+              class="text-xs bg-teal
+                     text-white px-3 py-1.5
+                     rounded-lg">
+
+              Offer help
+
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- REQUEST 2 -->
+        <article class="bg-white dark:bg-white/5
+                        border border-paper3
+                        dark:border-white/10
+                        rounded-xl p-4
+                        hover:border-teal
+                        transition-colors">
+
+          <div class="flex items-start
+                      justify-between gap-3">
+
+            <div class="flex items-center gap-2">
+
+              <div class="w-8 h-8 rounded-full
+                          bg-gold text-ink
+                          flex items-center justify-center
+                          text-xs">
+                S
+              </div>
+
+              <div>
+
+                <div class="text-xs font-medium">
+                  Shila Akter
+                </div>
+
+                <div class="text-[10px]
+                            text-ink/40
+                            dark:text-paper/40">
+                  1 hr ago · Padua
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <span class="font-mono text-[9px]
+                         uppercase text-gold">
+              Civic
+            </span>
+
+          </div>
+
+
+          <h3 class="font-medium text-sm mt-4">
+            Broken streetlight near Padua bazar
+          </h3>
+
+
+          <p class="text-xs text-ink/50
+                    dark:text-paper/50 mt-1">
+            The streetlight has been broken for
+            several days and the area gets very dark.
+          </p>
+
+
+          <div class="flex items-center
+                      justify-between mt-4">
+
+            <div class="flex items-center gap-3
+                        text-[10px]
+                        text-ink/40
+                        dark:text-paper/40">
+
+              <span>
+                <i class="fas fa-location-dot mr-1"></i>
+                0.6 km
+              </span>
+
+              <span>
+                <i class="fas fa-arrow-up mr-1"></i>
+                14 upvotes
+              </span>
+
+            </div>
+
+
+            <button
+              class="text-xs border
+                     border-paper3
+                     dark:border-white/15
+                     px-3 py-1.5
+                     rounded-lg
+                     hover:border-teal">
+
+              View
+
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- REQUEST 3 -->
+        <article class="bg-white dark:bg-white/5
+                        border border-paper3
+                        dark:border-white/10
+                        rounded-xl p-4
+                        hover:border-teal
+                        transition-colors">
+
+          <div class="flex items-start
+                      justify-between gap-3">
+
+            <div class="flex items-center gap-2">
+
+              <div class="w-8 h-8 rounded-full
+                          bg-teal text-white
+                          flex items-center justify-center
+                          text-xs">
+                T
+              </div>
+
+              <div>
+
+                <div class="text-xs font-medium">
+                  Tanvir Ahmed
+                </div>
+
+                <div class="text-[10px]
+                            text-ink/40
+                            dark:text-paper/40">
+                  3 hrs ago · Chandraghona
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <span class="font-mono text-[9px]
+                         uppercase text-gold">
+              Student
+            </span>
+
+          </div>
+
+
+          <h3 class="font-medium text-sm mt-4">
+            Looking for a Physics 2nd paper tutor
+          </h3>
+
+
+          <p class="text-xs text-ink/50
+                    dark:text-paper/50 mt-1">
+            HSC student looking for a tutor
+            around Chandraghona.
+          </p>
+
+
+          <div class="flex items-center
+                      justify-between mt-4">
+
+            <div class="flex items-center gap-3
+                        text-[10px]
+                        text-ink/40
+                        dark:text-paper/40">
+
+              <span>
+                <i class="fas fa-location-dot mr-1"></i>
+                2.1 km
+              </span>
+
+              <span>
+                <i class="fas fa-comment mr-1"></i>
+                1 response
+              </span>
+
+            </div>
+
+
+            <button
+              class="text-xs bg-teal
+                     text-white px-3 py-1.5
+                     rounded-lg">
+
+              Offer help
+
+            </button>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="space-y-5">
+
+
+      <!-- PROFILE CARD -->
+      <div class="bg-ink text-paper
+                  rounded-2xl p-5">
+
+        <div class="flex items-center gap-3">
+
+          <div class="w-12 h-12 rounded-full
+                      bg-teal
+                      flex items-center justify-center
+                      font-display font-semibold">
+            A
+          </div>
+
+          <div>
+
+            <h3 class="font-display
+                       font-semibold">
+              Arju Sultana
+            </h3>
+
+            <p class="text-xs text-paper/50">
+              Rangunia, Chattogram
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="flex items-center gap-2
+                    mt-4">
+
+          <span class="text-gold">
+            ★
+          </span>
+
+          <span class="text-sm font-medium">
+            4.8
+          </span>
+
+          <span class="text-xs text-paper/50">
+            trust score
+          </span>
+
+        </div>
+
+
+        <div class="mt-4 pt-4
+                    border-t border-white/10">
+
+          <div class="flex items-center
+                      gap-2 text-xs">
+
+            <span class="w-6 h-6 rounded-full
+                         bg-teal
+                         flex items-center justify-center">
+              ✓
+            </span>
+
+            <span class="text-paper/70">
+              Phone verified
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <a href="profile.html"
+           class="block text-center
+                  mt-4 text-xs
+                  text-goldLight
+                  hover:underline">
+
+          View profile →
+
+        </a>
+
+      </div>
+
+
+      <!-- MY ACTIVITY -->
+      <div class="bg-paper2 dark:bg-white/5
+                  rounded-2xl p-5">
+
+        <h3 class="font-display font-semibold mb-4">
+          My activity
+        </h3>
+
+
+        <div class="space-y-4">
+
+
+          <div class="flex items-center
+                      justify-between">
+
+            <div class="flex items-center gap-3">
+
+              <div class="w-8 h-8 rounded-lg
+                          bg-teal/10
+                          text-teal
+                          flex items-center justify-center">
+
+                <i class="fas fa-paper-plane text-xs"></i>
+
+              </div>
+
+              <span class="text-xs">
+                Active requests
+              </span>
+
+            </div>
+
+            <strong class="text-sm">
+              2
+            </strong>
+
+          </div>
+
+
+          <div class="flex items-center
+                      justify-between">
+
+            <div class="flex items-center gap-3">
+
+              <div class="w-8 h-8 rounded-lg
+                          bg-gold/10
+                          text-gold
+                          flex items-center justify-center">
+
+                <i class="fas fa-hand-holding-heart text-xs"></i>
+
+              </div>
+
+              <span class="text-xs">
+                Helped others
+              </span>
+
+            </div>
+
+            <strong class="text-sm">
+              8
+            </strong>
+
+          </div>
+
+
+          <div class="flex items-center
+                      justify-between">
+
+            <div class="flex items-center gap-3">
+
+              <div class="w-8 h-8 rounded-lg
+                          bg-teal/10
+                          text-teal
+                          flex items-center justify-center">
+
+                <i class="fas fa-star text-xs"></i>
+
+              </div>
+
+              <span class="text-xs">
+                Ratings received
+              </span>
+
+            </div>
+
+            <strong class="text-sm">
+              12
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUICK ACTION -->
+      <div class="border border-paper3
+                  dark:border-white/10
+                  rounded-2xl p-5">
+
+        <span class="font-mono text-[10px]
+                     tracking-widest uppercase
+                     text-gold">
+          Quick action
+        </span>
+
+        <h3 class="font-display
+                   font-semibold mt-2">
+          Can you help someone?
+        </h3>
+
+        <p class="text-xs
+                  text-ink/50
+                  dark:text-paper/50
+                  mt-1 mb-4">
+          Offer your time, knowledge or resources
+          to someone nearby.
+        </p>
+
+        <a href="find-help.html"
+           class="block text-center
+                  border border-paper3
+                  dark:border-white/15
+                  rounded-lg py-2
+                  text-xs font-medium
+                  hover:border-teal
+                  hover:text-teal">
+
+          Find someone to help →
+
+        </a>
+
+      </div>
+
+
+      <!-- SAFETY -->
+      <div class="flex gap-3 px-2">
+
+        <i class="fas fa-shield-halved
+                 text-teal dark:text-goldLight mt-0.5">
+        </i>
+
+        <p class="text-[10px]
+                  text-ink/40
+                  dark:text-paper/40
+                  leading-relaxed">
+
+          Stay safe on Sahay. Never share
+          passwords, OTPs, or sensitive
+          personal information with another user.
+
+        </p>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+</main>
+
+
+  </div>
+
+  <!-- MOBILE BOTTOM NAV -->
+
+  <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-50
+              bg-white/95 dark:bg-ink/95
+              backdrop-blur-md
+              border-t border-paper3
+              dark:border-white/10">
+
+
+<div class="grid grid-cols-5">
+
+  <a href="dashboard.html"
+     class="flex flex-col items-center
+            gap-1 py-3 text-teal">
+
+    <i class="fas fa-house text-sm"></i>
+    <span class="text-[9px]">Home</span>
+
+  </a>
+
+
+  <a href="find-help.html"
+     class="flex flex-col items-center
+            gap-1 py-3
+            text-ink/50 dark:text-paper/50">
+
+    <i class="fas fa-compass text-sm"></i>
+    <span class="text-[9px]">Find</span>
+
+  </a>
+
+
+  <a href="post-request.html"
+     class="flex flex-col items-center
+            gap-1 py-3
+            text-ink/50 dark:text-paper/50">
+
+    <div class="w-9 h-9 -mt-5 rounded-full
+                bg-teal text-white
+                flex items-center justify-center
+                shadow-lg">
+
+      <i class="fas fa-plus"></i>
+
+    </div>
+
+    <span class="text-[9px]">Post</span>
+
+  </a>
+
+
+  <a href="messages.html"
+     class="flex flex-col items-center
+            gap-1 py-3
+            text-ink/50 dark:text-paper/50">
+
+    <i class="fas fa-message text-sm"></i>
+    <span class="text-[9px]">Messages</span>
+
+  </a>
+
+
+  <a href="profile.html"
+     class="flex flex-col items-center
+            gap-1 py-3
+            text-ink/50 dark:text-paper/50">
+
+    <i class="fas fa-user text-sm"></i>
+    <span class="text-[9px]">Profile</span>
+
+  </a>
+
+</div>
+
+
+  </nav>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

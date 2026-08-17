@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sahay — Notifications</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-paper dark:bg-ink text-ink dark:text-paper min-h-screen">
+
+  <div class="flex items-center justify-between px-4 sm:px-6 py-2 bg-white dark:bg-ink/60 border-b border-paper3 dark:border-white/10 text-xs">
+    <div id="date-time" class="font-mono text-ink/60 dark:text-paper/60"></div>
+
+    <div class="flex items-center gap-3">
+      <select id="langToggle" class="bg-paper2 dark:bg-white/10 px-2 py-1 rounded text-xs outline-none">
+        <option value="en">EN</option>
+        <option value="bn">BN</option>
+      </select>
+
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="darkToggle" class="sr-only peer">
+        <div class="w-10 h-5 bg-paper3 dark:bg-white/10 rounded-full peer-checked:bg-teal after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-full"></div>
+      </label>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-50 bg-paper/90 dark:bg-ink/90 backdrop-blur-md border-b border-paper3 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+
+      <a href="dashboard.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-full bg-teal text-white flex items-center justify-center font-display font-semibold">S</div>
+        <span class="font-display font-semibold text-lg">Sahay</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="dashboard.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">Home</a>
+        <a href="find-help.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">Find Help</a>
+        <a href="my-requests.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">My Requests</a>
+        <a href="messages.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">Messages</a>
+      </nav>
+
+      <a href="profile.html" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-teal text-white flex items-center justify-center text-xs font-medium">A</div>
+        <span class="hidden sm:block text-xs font-medium">Arju Sultana</span>
+      </a>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 pb-28">
+
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
+
+      <div>
+        <span class="font-mono text-[10px] tracking-widest uppercase text-teal dark:text-goldLight">
+          Stay updated
+        </span>
+
+        <h1 class="font-display text-3xl sm:text-4xl font-semibold mt-2">
+          Notifications
+        </h1>
+
+        <p class="text-sm text-ink/60 dark:text-paper/60 mt-2">
+          Updates about your requests, messages and community activity.
+        </p>
+      </div>
+
+      <button id="markAllRead"
+              class="self-start sm:self-auto text-xs text-teal hover:underline">
+        Mark all as read
+      </button>
+
+    </div>
+
+
+    <div class="flex items-center gap-2 overflow-x-auto pb-2 mb-4">
+
+      <button class="filter-btn shrink-0 px-4 py-2 rounded-full bg-teal text-white text-[10px]" data-filter="all">
+        All
+      </button>
+
+      <button class="filter-btn shrink-0 px-4 py-2 rounded-full bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 text-[10px]" data-filter="requests">
+        Requests
+      </button>
+
+      <button class="filter-btn shrink-0 px-4 py-2 rounded-full bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 text-[10px]" data-filter="messages">
+        Messages
+      </button>
+
+      <button class="filter-btn shrink-0 px-4 py-2 rounded-full bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 text-[10px]" data-filter="system">
+        System
+      </button>
+
+    </div>
+
+
+    <section id="notificationList"
+             class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl overflow-hidden">
+
+
+      <article class="notification-item flex gap-3 sm:gap-4 p-4 sm:p-5 border-b border-paper3 dark:border-white/10 bg-teal/[0.04] hover:bg-paper2 dark:hover:bg-white/[0.04] transition-colors"
+               data-type="requests"
+               data-unread="true">
+
+        <div class="w-10 h-10 rounded-full bg-teal/10 text-teal flex items-center justify-center shrink-0">
+          <i class="fas fa-hand-holding-heart text-sm"></i>
+        </div>
+
+        <div class="flex-1 min-w-0">
+
+          <div class="flex items-start justify-between gap-3">
+
+            <div>
+              <p class="text-xs sm:text-sm font-medium">
+                Someone offered to help with your request
+              </p>
+
+              <p class="text-[10px] text-ink/50 dark:text-paper/50 mt-1 leading-relaxed">
+                Rahim Ahmed responded to your request “Need help with university admission form”.
+              </p>
+            </div>
+
+            <span class="unread-dot w-2 h-2 rounded-full bg-teal mt-1.5 shrink-0"></span>
+
+          </div>
+
+          <div class="flex items-center gap-3 mt-3">
+            <span class="text-[9px] text-ink/40 dark:text-paper/40">8 minutes ago</span>
+
+            <a href="request-details.html" class="text-[9px] text-teal hover:underline">
+              View request
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="notification-item flex gap-3 sm:gap-4 p-4 sm:p-5 border-b border-paper3 dark:border-white/10 bg-teal/[0.04] hover:bg-paper2 dark:hover:bg-white/[0.04] transition-colors"
+               data-type="messages"
+               data-unread="true">
+
+        <div class="w-10 h-10 rounded-full bg-gold/10 text-gold flex items-center justify-center shrink-0">
+          <i class="fas fa-message text-sm"></i>
+        </div>
+
+        <div class="flex-1 min-w-0">
+
+          <div class="flex items-start justify-between gap-3">
+
+            <div>
+              <p class="text-xs sm:text-sm font-medium">
+                New message from Nusrat Jahan
+              </p>
+
+              <p class="text-[10px] text-ink/50 dark:text-paper/50 mt-1 leading-relaxed">
+                “Thank you. I will share the hospital details with you.”
+              </p>
+            </div>
+
+            <span class="unread-dot w-2 h-2 rounded-full bg-teal mt-1.5 shrink-0"></span>
+
+          </div>
+
+          <div class="flex items-center gap-3 mt-3">
+            <span class="text-[9px] text-ink/40 dark:text-paper/40">25 minutes ago</span>
+
+            <a href="messages.html" class="text-[9px] text-teal hover:underline">
+              Open messages
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="notification-item flex gap-3 sm:gap-4 p-4 sm:p-5 border-b border-paper3 dark:border-white/10 hover:bg-paper2 dark:hover:bg-white/[0.04] transition-colors"
+               data-type="requests"
+               data-unread="false">
+
+        <div class="w-10 h-10 rounded-full bg-paper2 dark:bg-white/10 text-ink/50 dark:text-paper/50 flex items-center justify-center shrink-0">
+          <i class="fas fa-circle-check text-sm"></i>
+        </div>
+
+        <div class="flex-1 min-w-0">
+
+          <p class="text-xs sm:text-sm font-medium">
+            Your request was successfully posted
+          </p>
+
+          <p class="text-[10px] text-ink/50 dark:text-paper/50 mt-1 leading-relaxed">
+            Your request is now visible to verified people nearby.
+          </p>
+
+          <div class="flex items-center gap-3 mt-3">
+            <span class="text-[9px] text-ink/40 dark:text-paper/40">1 hour ago</span>
+
+            <a href="my-requests.html" class="text-[9px] text-teal hover:underline">
+              My requests
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="notification-item flex gap-3 sm:gap-4 p-4 sm:p-5 border-b border-paper3 dark:border-white/10 hover:bg-paper2 dark:hover:bg-white/[0.04] transition-colors"
+               data-type="system"
+               data-unread="false">
+
+        <div class="w-10 h-10 rounded-full bg-teal/10 text-teal flex items-center justify-center shrink-0">
+          <i class="fas fa-shield-halved text-sm"></i>
+        </div>
+
+        <div class="flex-1 min-w-0">
+
+          <p class="text-xs sm:text-sm font-medium">
+            Your profile verification is updated
+          </p>
+
+          <p class="text-[10px] text-ink/50 dark:text-paper/50 mt-1 leading-relaxed">
+            Phone, email and Google account verification are complete.
+          </p>
+
+          <div class="flex items-center gap-3 mt-3">
+            <span class="text-[9px] text-ink/40 dark:text-paper/40">Yesterday</span>
+
+            <a href="profile.html" class="text-[9px] text-teal hover:underline">
+              View profile
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="notification-item flex gap-3 sm:gap-4 p-4 sm:p-5 hover:bg-paper2 dark:hover:bg-white/[0.04] transition-colors"
+               data-type="system"
+               data-unread="false">
+
+        <div class="w-10 h-10 rounded-full bg-gold/10 text-gold flex items-center justify-center shrink-0">
+          <i class="fas fa-star text-sm"></i>
+        </div>
+
+        <div class="flex-1 min-w-0">
+
+          <p class="text-xs sm:text-sm font-medium">
+            You received a new rating
+          </p>
+
+          <p class="text-[10px] text-ink/50 dark:text-paper/50 mt-1 leading-relaxed">
+            A community member rated your recent help 5 stars. Your trust score is now 4.8.
+          </p>
+
+          <div class="flex items-center gap-3 mt-3">
+            <span class="text-[9px] text-ink/40 dark:text-paper/40">2 days ago</span>
+
+            <a href="profile.html" class="text-[9px] text-teal hover:underline">
+              View trust score
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <div id="emptyState" class="hidden p-10 text-center">
+
+        <div class="w-12 h-12 rounded-full bg-paper2 dark:bg-white/10 mx-auto flex items-center justify-center">
+          <i class="fas fa-bell-slash text-ink/30 dark:text-paper/30"></i>
+        </div>
+
+        <h2 class="font-display text-lg font-semibold mt-4">
+          No notifications
+        </h2>
+
+        <p class="text-xs text-ink/50 dark:text-paper/50 mt-1">
+          Nothing to show in this category.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="mt-5 bg-ink text-paper rounded-2xl p-5 sm:p-6">
+
+      <div class="flex items-start gap-3">
+
+        <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+          <i class="fas fa-bell text-goldLight text-sm"></i>
+        </div>
+
+        <div>
+          <h2 class="font-display text-lg font-semibold">
+            Notification preferences
+          </h2>
+
+          <p class="text-[10px] text-paper/60 mt-1 leading-relaxed">
+            Choose how you want to receive important updates from Sahay.
+          </p>
+
+          <a href="settings.html"
+             class="inline-block mt-4 text-[10px] text-goldLight hover:underline">
+            Manage preferences
+            <i class="fas fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-ink/95 backdrop-blur-md border-t border-paper3 dark:border-white/10">
+
+    <div class="grid grid-cols-5">
+
+      <a href="dashboard.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <i class="fas fa-house text-sm"></i>
+        <span class="text-[9px]">Home</span>
+      </a>
+
+      <a href="find-help.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <i class="fas fa-compass text-sm"></i>
+        <span class="text-[9px]">Find</span>
+      </a>
+
+      <a href="post-request.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <div class="w-9 h-9 -mt-5 rounded-full bg-teal text-white flex items-center justify-center shadow-lg">
+          <i class="fas fa-plus"></i>
+        </div>
+        <span class="text-[9px]">Post</span>
+      </a>
+
+      <a href="messages.html" class="flex flex-col items-center gap-1 py-3 text-teal">
+        <i class="fas fa-message text-sm"></i>
+        <span class="text-[9px]">Messages</span>
+      </a>
+
+      <a href="profile.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+        <i class="fas fa-user text-sm"></i>
+        <span class="text-[9px]">Profile</span>
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <div id="toast"
+       class="fixed bottom-20 sm:bottom-6 right-4 z-[100] hidden bg-ink text-paper px-4 py-3 rounded-lg shadow-lg text-xs">
+    All notifications marked as read.
+  </div>
+
+
+  <script src="js/script.js"></script>
+
+  <script>
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const notificationItems = document.querySelectorAll(".notification-item");
+    const emptyState = document.getElementById("emptyState");
+    const markAllRead = document.getElementById("markAllRead");
+    const toast = document.getElementById("toast");
+
+    filterButtons.forEach(function(button) {
+
+      button.addEventListener("click", function() {
+
+        filterButtons.forEach(function(btn) {
+          btn.classList.remove("bg-teal", "text-white");
+          btn.classList.add("bg-white", "dark:bg-white/5", "border", "border-paper3", "dark:border-white/10");
+        });
+
+        button.classList.remove("bg-white", "dark:bg-white/5", "border", "border-paper3", "dark:border-white/10");
+        button.classList.add("bg-teal", "text-white");
+
+        const filter = button.dataset.filter;
+        let visibleCount = 0;
+
+        notificationItems.forEach(function(item) {
+
+          if (filter === "all" || item.dataset.type === filter) {
+            item.classList.remove("hidden");
+            visibleCount++;
+          } else {
+            item.classList.add("hidden");
+          }
+
+        });
+
+        if (visibleCount === 0) {
+          emptyState.classList.remove("hidden");
+        } else {
+          emptyState.classList.add("hidden");
+        }
+
+      });
+
+    });
+
+
+    markAllRead.addEventListener("click", function() {
+
+      notificationItems.forEach(function(item) {
+
+        item.dataset.unread = "false";
+        item.classList.remove("bg-teal/[0.04]");
+
+        const dot = item.querySelector(".unread-dot");
+
+        if (dot) {
+          dot.remove();
+        }
+
+      });
+
+      toast.classList.remove("hidden");
+
+      setTimeout(function() {
+        toast.classList.add("hidden");
+      }, 2200);
+
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sahay — নাগরিক সেবা এক জায়গায়</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind-config.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-paper dark:bg-ink text-ink dark:text-paper transition-colors">
+
+  <!-- TOP BAR -->
+  <div class="flex items-center justify-between px-4 py-2 bg-white dark:bg-ink/60 border-b border-paper3 dark:border-white/10 text-xs">
+    <div id="date-time" class="font-mono text-ink/60 dark:text-paper/60"></div>
+    <div class="flex items-center gap-3">
+      <select id="langToggle" class="bg-paper2 dark:bg-white/10 px-2 py-1 rounded text-xs">
+        <option value="en">EN</option>
+        <option value="bn">BN</option>
+      </select>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="darkToggle" class="sr-only peer">
+        <div class="w-10 h-5 bg-paper3 rounded-full peer peer-checked:bg-teal
+          after:content-[''] after:absolute after:top-[2px] after:left-[2px]
+          after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all
+          peer-checked:after:translate-x-full"></div>
+      </label>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <div class="flex justify-between items-center px-6 py-3 sticky top-0 z-50 bg-paper/90 dark:bg-ink/90 backdrop-blur-md border-b border-paper3 dark:border-white/10">
+    <a href="index.html" class="flex items-center gap-2">
+    
+      <span class="font-display font-semibold text-lg">Sahay</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm text-ink/70 dark:text-paper/70">
+      <a href="#how" class="hover:text-teal dark:hover:text-goldLight">How it works</a>
+      <a href="#modules" class="hover:text-teal dark:hover:text-goldLight">Services</a>
+      <a href="#preview" class="hover:text-teal dark:hover:text-goldLight">Preview</a>
+      <a href="#trust" class="hover:text-teal dark:hover:text-goldLight">Trust &amp; safety</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <!-- <a href="login.html" class="text-sm font-medium hover:text-teal dark:hover:text-goldLight">Log in</a> -->
+      <a href="login.html" class="bg-teal hover:bg-tealLight text-white text-sm font-medium px-4 py-2 rounded-full transition-colors">Join Sahay</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="max-w-6xl mx-auto px-6 pt-16 pb-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <span class="font-mono text-xs tracking-widest uppercase text-teal dark:text-goldLight flex items-center gap-2">
+        <span class="w-4 h-px bg-gold inline-block"></span> Citizen service platform · Rangunia, Chattogram
+      </span>
+      <h1 class="font-display text-4xl md:text-5xl font-semibold leading-tight mt-4 mb-5">
+        One place for <span class="text-teal dark:text-tealLight">every</span> kind of help you need
+        <span class="bn block text-3xl mt-1 text-ink/70 dark:text-paper/70">রাঙ্গুনিয়ার মানুষের জন্য একটি সমন্বিত নাগরিক সেবা প্ল্যাটফর্ম</span>
+      </h1>
+      <p class="text-ink/60 dark:text-paper/60 text-lg max-w-md mb-8">
+        Medical guidance, civic issue reporting, neighborhood support, and student help — for the people of Rangunia Upazila, matched union by union.
+      </p>
+      <div class="flex gap-3 mb-10">
+        <a href="login.html" class="bg-teal hover:bg-tealLight text-white px-6 py-3 rounded-full text-sm font-medium">Post a request →</a>
+        <a href="#how" class="border border-paper3 dark:border-white/20 px-6 py-3 rounded-full text-sm font-medium hover:border-teal">See how it works</a>
+      </div>
+      <div class="flex gap-8 pt-6 border-t border-paper3 dark:border-white/10">
+        <div><div class="font-display text-2xl font-semibold">4</div><div class="text-xs text-ink/50 dark:text-paper/50">service modules</div></div>
+        <div><div class="font-display text-2xl font-semibold">15</div><div class="text-xs text-ink/50 dark:text-paper/50">unions covered</div></div>
+        <div><div class="font-display text-2xl font-semibold">1</div><div class="text-xs text-ink/50 dark:text-paper/50">verified profile</div></div>
+      </div>
+    </div>
+
+    <div class="flex justify-center">
+      <svg viewBox="0 0 300 300" class="w-full max-w-md">
+        <line class="spoke-draw" x1="150" y1="150" x2="150" y2="45" stroke="#E3DCC6" stroke-width="1.5"/>
+        <line class="spoke-draw" x1="150" y1="150" x2="255" y2="150" stroke="#E3DCC6" stroke-width="1.5"/>
+        <line class="spoke-draw" x1="150" y1="150" x2="150" y2="255" stroke="#E3DCC6" stroke-width="1.5"/>
+        <line class="spoke-draw" x1="150" y1="150" x2="45" y2="150" stroke="#E3DCC6" stroke-width="1.5"/>
+        <circle cx="150" cy="150" r="42" fill="#1F6F5C"/>
+        <text x="150" y="155" text-anchor="middle" class="font-display" font-size="15" font-weight="600" fill="#F8F5EC">You</text>
+        <circle cx="150" cy="45" r="34" fill="#EFEADA" stroke="#C9922B" stroke-width="1.5"/>
+        <text x="150" y="41" text-anchor="middle" class="node-label" fill="#16302B">Medical</text>
+        <text x="150" y="54" text-anchor="middle" class="node-sub" fill="#5B5A4E">doctors, blood</text>
+        <circle cx="255" cy="150" r="34" fill="#EFEADA" stroke="#C9922B" stroke-width="1.5"/>
+        <text x="255" y="146" text-anchor="middle" class="node-label" fill="#16302B">Civic</text>
+        <text x="255" y="159" text-anchor="middle" class="node-sub" fill="#5B5A4E">report issues</text>
+        <circle cx="150" cy="255" r="34" fill="#EFEADA" stroke="#C9922B" stroke-width="1.5"/>
+        <text x="150" y="251" text-anchor="middle" class="node-label" fill="#16302B">Neighborhood</text>
+        <text x="150" y="264" text-anchor="middle" class="node-sub" fill="#5B5A4E">everyday help</text>
+        <circle cx="45" cy="150" r="34" fill="#EFEADA" stroke="#C9922B" stroke-width="1.5"/>
+        <text x="45" y="146" text-anchor="middle" class="node-label" fill="#16302B">Student</text>
+        <text x="45" y="159" text-anchor="middle" class="node-sub" fill="#5B5A4E">tutors, notes</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="max-w-6xl mx-auto px-6 py-16">
+    <span class="font-mono text-xs tracking-widest uppercase text-teal dark:text-goldLight flex items-center gap-2">
+      <span class="w-4 h-px bg-gold inline-block"></span> Process
+    </span>
+    <h2 class="font-display text-3xl font-semibold mt-3 mb-10">From problem to help, in three steps</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-paper2 dark:bg-white/5 rounded-2xl p-6">
+        <span class="font-mono text-xs text-gold">01 · Post</span>
+        <h3 class="font-display text-lg font-semibold mt-3 mb-2">Describe what you need</h3>
+        <p class="text-sm text-ink/60 dark:text-paper/60">Write your request under any module — Sahay tags the right category and area automatically.</p>
+      </div>
+      <div class="bg-paper2 dark:bg-white/5 rounded-2xl p-6">
+        <span class="font-mono text-xs text-gold">02 · Match</span>
+        <h3 class="font-display text-lg font-semibold mt-3 mb-2">Nearby people respond</h3>
+        <p class="text-sm text-ink/60 dark:text-paper/60">Verified helpers, tutors, or service providers in your area see it and offer to help.</p>
+      </div>
+      <div class="bg-paper2 dark:bg-white/5 rounded-2xl p-6">
+        <span class="font-mono text-xs text-gold">03 · Resolve</span>
+        <h3 class="font-display text-lg font-semibold mt-3 mb-2">Coordinate and rate</h3>
+        <p class="text-sm text-ink/60 dark:text-paper/60">Message directly, get it sorted, and leave a rating that builds trust for next time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULES -->
+  <section id="modules" class="bg-ink text-paper py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <span class="font-mono text-xs tracking-widest uppercase text-goldLight flex items-center gap-2">
+        <span class="w-4 h-px bg-goldLight inline-block"></span> Four modules, one account
+      </span>
+      <h2 class="font-display text-3xl font-semibold mt-3 mb-2">Whatever the problem, it starts here</h2>
+      <p class="text-paper/60 mb-10">Every module shares the same profile, trust score, and location matching.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="border border-white/15 rounded-2xl p-6 hover:border-goldLight transition-colors">
+          <i class="fas fa-briefcase-medical text-goldLight text-xl mb-4"></i>
+          <h3 class="font-display text-lg font-semibold mb-2">Medical</h3>
+          <p class="text-sm text-paper/60">Find verified doctors, request symptom guidance, or search blood donors nearby.</p>
+          <span class="inline-block mt-4 font-mono text-xs text-goldLight">emergency-ready</span>
+        </div>
+        <div class="border border-white/15 rounded-2xl p-6 hover:border-goldLight transition-colors">
+          <i class="fas fa-road text-goldLight text-xl mb-4"></i>
+          <h3 class="font-display text-lg font-semibold mb-2">Civic</h3>
+          <p class="text-sm text-paper/60">Report potholes, broken lights, or waste issues with photos — track status with your neighbors.</p>
+          <span class="inline-block mt-4 font-mono text-xs text-goldLight">map-based</span>
+        </div>
+        <div class="border border-white/15 rounded-2xl p-6 hover:border-goldLight transition-colors">
+          <i class="fas fa-people-roof text-goldLight text-xl mb-4"></i>
+          <h3 class="font-display text-lg font-semibold mb-2">Neighborhood</h3>
+          <p class="text-sm text-paper/60">Ask for everyday help — groceries, childcare, small repairs — from people close by.</p>
+          <span class="inline-block mt-4 font-mono text-xs text-goldLight">trust-scored</span>
+        </div>
+        <div class="border border-white/15 rounded-2xl p-6 hover:border-goldLight transition-colors">
+          <i class="fas fa-graduation-cap text-goldLight text-xl mb-4"></i>
+          <h3 class="font-display text-lg font-semibold mb-2">Student</h3>
+          <p class="text-sm text-paper/60">Find tutors, exchange notes, or flag campus and hostel issues that need attention.</p>
+          <span class="inline-block mt-4 font-mono text-xs text-goldLight">campus-aware</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE PREVIEW: DIRECTORY + FEED -->
+  <section id="preview" class="max-w-6xl mx-auto px-6 py-16">
+    <span class="font-mono text-xs tracking-widest uppercase text-teal dark:text-goldLight flex items-center gap-2">
+      <span class="w-4 h-px bg-gold inline-block"></span> See it in action
+    </span>
+    <h2 class="font-display text-3xl font-semibold mt-3 mb-2">Two ways to get help</h2>
+    <p class="text-ink/60 dark:text-paper/60 max-w-xl mb-10">Some things need an instant number to call. Others need a real person to respond. Sahay covers both.</p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+      <!-- DIRECTORY PREVIEW -->
+      <div class="bg-paper2 dark:bg-white/5 rounded-2xl p-6">
+        <div class="flex items-center justify-between mb-1">
+          <h3 class="font-display text-lg font-semibold">Directory</h3>
+          <span class="font-mono text-[10px] uppercase text-ink/40 dark:text-paper/40">instant · no waiting</span>
+        </div>
+        <p class="text-xs text-ink/50 dark:text-paper/50 mb-4">Verified doctors, hospitals, blood banks in Rangunia — search and call in one tap.</p>
+
+        <div class="flex items-center bg-white dark:bg-white/10 rounded-lg px-3 py-2 mb-3">
+          <i class="fas fa-search text-ink/30 mr-2 text-xs"></i>
+          <input id="dirSearch" type="text" placeholder="Search doctor, hospital, union, blood group..." class="bg-transparent outline-none w-full text-sm">
+        </div>
+
+        <div class="flex gap-2 mb-4 flex-wrap" id="dirFilters">
+          <button data-filter="all" class="dir-chip px-3 py-1 rounded-full text-xs font-medium bg-teal text-white">All</button>
+          <button data-filter="Doctor" class="dir-chip px-3 py-1 rounded-full text-xs font-medium bg-white dark:bg-white/10 text-ink/70 dark:text-paper/70">Doctor</button>
+          <button data-filter="Hospital" class="dir-chip px-3 py-1 rounded-full text-xs font-medium bg-white dark:bg-white/10 text-ink/70 dark:text-paper/70">Hospital</button>
+          <button data-filter="Blood" class="dir-chip px-3 py-1 rounded-full text-xs font-medium bg-white dark:bg-white/10 text-ink/70 dark:text-paper/70">Blood Bank</button>
+        </div>
+
+        <div id="dirList" class="space-y-2">
+          <div class="dir-item flex items-center justify-between bg-white dark:bg-white/10 rounded-lg px-3 py-2.5" data-category="Doctor">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-user-doctor text-teal dark:text-tealLight"></i>
+              <div>
+                <div class="text-sm font-medium">Dr. Farhana Yasmin — Medicine</div>
+                <div class="text-xs text-ink/50 dark:text-paper/50">Rangunia Upazila Health Complex</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="fav-btn text-ink/30 hover:text-gold text-sm">♡</button>
+              <button class="copy-btn bg-paper3 dark:bg-white/10 text-xs px-2.5 py-1.5 rounded" data-number="01711000111"><i class="fas fa-copy"></i></button>
+              <button class="bg-teal text-white text-xs px-3 py-1.5 rounded flex items-center gap-1"><i class="fas fa-phone"></i> Call</button>
+            </div>
+          </div>
+
+          <div class="dir-item flex items-center justify-between bg-white dark:bg-white/10 rounded-lg px-3 py-2.5" data-category="Hospital">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-hospital text-teal dark:text-tealLight"></i>
+              <div>
+                <div class="text-sm font-medium">Rangunia Upazila Health Complex</div>
+                <div class="text-xs text-ink/50 dark:text-paper/50">24/7 Emergency · Rangunia Sadar</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="fav-btn text-ink/30 hover:text-gold text-sm">♡</button>
+              <button class="copy-btn bg-paper3 dark:bg-white/10 text-xs px-2.5 py-1.5 rounded" data-number="199"><i class="fas fa-copy"></i></button>
+              <button class="bg-teal text-white text-xs px-3 py-1.5 rounded flex items-center gap-1"><i class="fas fa-phone"></i> Call</button>
+            </div>
+          </div>
+
+          <div class="dir-item flex items-center justify-between bg-white dark:bg-white/10 rounded-lg px-3 py-2.5" data-category="Blood">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-droplet text-teal dark:text-tealLight"></i>
+              <div>
+                <div class="text-sm font-medium">O+ Donor — Rakib Hasan</div>
+                <div class="text-xs text-ink/50 dark:text-paper/50">Available · Chandraghona</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="fav-btn text-ink/30 hover:text-gold text-sm">♡</button>
+              <button class="copy-btn bg-paper3 dark:bg-white/10 text-xs px-2.5 py-1.5 rounded" data-number="01911000222"><i class="fas fa-copy"></i></button>
+              <button class="bg-teal text-white text-xs px-3 py-1.5 rounded flex items-center gap-1"><i class="fas fa-phone"></i> Call</button>
+            </div>
+          </div>
+        </div>
+        <p class="text-[11px] text-ink/40 dark:text-paper/40 mt-3">Same directory pattern as the Emergency Service Directory — search, filter, one-tap call &amp; copy.</p>
+      </div>
+
+      <!-- FEED PREVIEW -->
+      <div class="bg-paper2 dark:bg-white/5 rounded-2xl p-6">
+        <div class="flex items-center justify-between mb-1">
+          <h3 class="font-display text-lg font-semibold">Community feed</h3>
+          <span class="font-mono text-[10px] uppercase text-ink/40 dark:text-paper/40">post · match · respond</span>
+        </div>
+        <p class="text-xs text-ink/50 dark:text-paper/50 mb-4">Requests that need a real person nearby to say yes.</p>
+
+        <div class="space-y-3">
+          <div class="bg-white dark:bg-white/10 rounded-lg p-3">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-mono text-[10px] uppercase text-gold">Neighborhood</span>
+              <span class="text-[11px] text-ink/40 dark:text-paper/40">12 min ago</span>
+            </div>
+            <div class="text-sm font-medium mb-1">Need someone to pick up medicine from Kodala bazar pharmacy</div>
+            <div class="flex items-center justify-between text-xs text-ink/50 dark:text-paper/50">
+              <span><i class="fas fa-location-dot"></i> Kodala Union, 1.2km</span>
+              <span>3 responses</span>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-white/10 rounded-lg p-3">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-mono text-[10px] uppercase text-gold">Civic</span>
+              <span class="text-[11px] text-ink/40 dark:text-paper/40">1 hr ago</span>
+            </div>
+            <div class="text-sm font-medium mb-1">Broken streetlight near Padua bazar, unsafe at night</div>
+            <div class="flex items-center justify-between text-xs text-ink/50 dark:text-paper/50">
+              <span><i class="fas fa-location-dot"></i> Padua Union, 0.6km</span>
+              <span>14 upvotes</span>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-white/10 rounded-lg p-3">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-mono text-[10px] uppercase text-gold">Student</span>
+              <span class="text-[11px] text-ink/40 dark:text-paper/40">3 hrs ago</span>
+            </div>
+            <div class="text-sm font-medium mb-1">Looking for a Physics 2nd paper tutor, HSC batch</div>
+            <div class="flex items-center justify-between text-xs text-ink/50 dark:text-paper/50">
+              <span><i class="fas fa-location-dot"></i> Chandraghona, 2.1km</span>
+              <span>1 response</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-[11px] text-ink/40 dark:text-paper/40 mt-3">This is the part unique to Sahay — no directory can do this, it needs a person to say yes.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section id="trust" class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="bg-paper2 dark:bg-white/5 rounded-2xl p-8">
+      <div class="flex items-center gap-4 py-3 border-b border-paper3 dark:border-white/10">
+        <div class="w-9 h-9 rounded-full bg-teal text-white flex items-center justify-center font-display text-sm">✓</div>
+        <div><strong class="block text-sm">Phone verified</strong><span class="text-xs text-ink/50 dark:text-paper/50">Confirmed via OTP before posting</span></div>
+      </div>
+      <div class="flex items-center gap-4 py-3 border-b border-paper3 dark:border-white/10">
+        <div class="w-9 h-9 rounded-full bg-teal text-white flex items-center justify-center font-display text-sm">★</div>
+        <div><strong class="block text-sm">Community rated</strong><span class="text-xs text-ink/50 dark:text-paper/50">Every completed request earns a rating</span></div>
+      </div>
+      <div class="flex items-center gap-4 py-3">
+        <div class="w-9 h-9 rounded-full bg-teal text-white flex items-center justify-center font-display text-sm">◈</div>
+        <div><strong class="block text-sm">NID vouched</strong><span class="text-xs text-ink/50 dark:text-paper/50">Optional higher tier for sensitive requests</span></div>
+      </div>
+    </div>
+    <div>
+      <span class="font-mono text-xs tracking-widest uppercase text-teal dark:text-goldLight flex items-center gap-2">
+        <span class="w-4 h-px bg-gold inline-block"></span> Trust &amp; safety
+      </span>
+      <h2 class="font-display text-3xl font-semibold mt-3 mb-4">One reputation across every module</h2>
+      <p class="text-ink/60 dark:text-paper/60 max-w-md mb-6">Your rating from helping a neighbor carries over to tutoring a student or responding to a civic report — so trust is earned once and recognized everywhere on Sahay.</p>
+      <a href="#" class="border border-paper3 dark:border-white/20 px-5 py-2.5 rounded-full text-sm font-medium hover:border-teal">Read our safety policy →</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gold py-14 text-center">
+    <h2 class="font-display text-3xl font-semibold text-ink mb-2 bn">তোমার এলাকায় সাহায্য অপেক্ষা করছে</h2>
+    <p class="text-ink/70 mb-6">Post your first request or offer to help someone nearby — it takes a minute.</p>
+    <a href="login.html" class="bg-ink text-paper px-6 py-3 rounded-full text-sm font-medium">Get started with Sahay →</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-paper3 dark:border-white/10 py-6">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between gap-2 text-xs text-ink/50 dark:text-paper/50">
+      <span>© 2026 Sahay — a citizen service platform for Rangunia Upazila</span>
+      <span>Medical · Civic · Neighborhood · Student</span>
+    </div>
+  </footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

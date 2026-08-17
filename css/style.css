@@ -1,0 +1,46 @@
+/* Sahay — shared styles */
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.font-display {
+  font-family: 'Fraunces', serif;
+}
+
+.bn {
+  font-family: 'Noto Sans Bengali', 'IBM Plex Sans', sans-serif;
+}
+
+.node-label {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.node-sub {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 10px;
+}
+
+/* Hero radial-diagram line-draw animation */
+.spoke-draw {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: draw 1.3s ease forwards;
+}
+.spoke-draw:nth-child(1) { animation-delay: .1s; }
+.spoke-draw:nth-child(2) { animation-delay: .25s; }
+.spoke-draw:nth-child(3) { animation-delay: .4s; }
+.spoke-draw:nth-child(4) { animation-delay: .55s; }
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spoke-draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}

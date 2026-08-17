@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sahay — Find Help</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="js/tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-paper dark:bg-ink text-ink dark:text-paper min-h-screen">
+
+  <div class="flex items-center justify-between px-4 sm:px-6 py-2 bg-white dark:bg-ink/60 border-b border-paper3 dark:border-white/10 text-xs">
+
+
+<div id="date-time" class="font-mono text-ink/60 dark:text-paper/60"></div>
+
+<div class="flex items-center gap-3">
+
+  <select id="langToggle" class="bg-paper2 dark:bg-white/10 px-2 py-1 rounded text-xs outline-none">
+    <option value="en">EN</option>
+    <option value="bn">BN</option>
+  </select>
+
+  <label class="relative inline-flex items-center cursor-pointer">
+
+    <input type="checkbox" id="darkToggle" class="sr-only peer">
+
+    <div class="w-10 h-5 bg-paper3 dark:bg-white/10 rounded-full peer-checked:bg-teal after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-full"></div>
+
+  </label>
+
+</div>
+
+
+  </div>
+
+  <header class="sticky top-0 z-50 bg-paper/90 dark:bg-ink/90 backdrop-blur-md border-b border-paper3 dark:border-white/10">
+
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+
+  <a href="dashboard.html" class="flex items-center gap-2">
+
+    <div class="w-9 h-9 rounded-full bg-teal text-white flex items-center justify-center font-display font-semibold">
+      S
+    </div>
+
+    <span class="font-display font-semibold text-lg">
+      Sahay
+    </span>
+
+  </a>
+
+
+  <nav class="hidden md:flex items-center gap-6">
+
+    <a href="dashboard.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">
+      Home
+    </a>
+
+    <a href="find-help.html" class="text-xs font-medium text-teal">
+      Find Help
+    </a>
+
+    <a href="my-requests.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">
+      My Requests
+    </a>
+
+    <a href="messages.html" class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">
+      Messages
+    </a>
+
+  </nav>
+
+
+  <a href="profile.html" class="flex items-center gap-2">
+
+    <div class="w-8 h-8 rounded-full bg-teal text-white flex items-center justify-center text-xs font-medium">
+      A
+    </div>
+
+    <span class="hidden sm:block text-xs font-medium">
+      Arju Sultana
+    </span>
+
+  </a>
+
+</div>
+
+
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 sm:py-10 pb-28">
+
+
+<section class="mb-7">
+
+  <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5">
+
+    <div>
+
+      <span class="font-mono text-[10px] tracking-widest uppercase text-teal dark:text-goldLight">
+        Community requests
+      </span>
+
+      <h1 class="font-display text-3xl sm:text-4xl font-semibold mt-2">
+        Find someone to help.
+      </h1>
+
+      <p class="text-sm text-ink/60 dark:text-paper/60 mt-2 max-w-xl leading-relaxed">
+        Discover people nearby who need help. Every small action makes your community stronger.
+      </p>
+
+    </div>
+
+
+    <a href="post-request.html" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-tealLight text-white rounded-lg px-5 py-3 text-sm font-medium transition-colors">
+
+      <i class="fas fa-plus text-xs"></i>
+
+      Post a request
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="mb-7">
+
+  <div class="flex flex-col lg:flex-row gap-3">
+
+    <div class="relative flex-1">
+
+      <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-ink/30 dark:text-paper/30 text-sm"></i>
+
+      <input id="searchInput"
+             type="search"
+             placeholder="Search requests..."
+             class="w-full bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl pl-11 pr-4 py-3 text-sm outline-none focus:border-teal">
+
+    </div>
+
+
+    <div class="relative lg:w-52">
+
+      <i class="fas fa-location-dot absolute left-4 top-1/2 -translate-y-1/2 text-ink/30 dark:text-paper/30 text-xs"></i>
+
+      <select id="areaFilter" class="w-full appearance-none bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl pl-10 pr-9 py-3 text-sm outline-none focus:border-teal">
+
+        <option value="all">All areas</option>
+        <option value="Rangunia Sadar">Rangunia Sadar</option>
+        <option value="Chandraghona">Chandraghona</option>
+        <option value="Kodala">Kodala</option>
+        <option value="Padua">Padua</option>
+        <option value="Pomra">Pomra</option>
+
+      </select>
+
+      <i class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-[9px] text-ink/30"></i>
+
+    </div>
+
+  </div>
+
+
+  <div class="flex items-center gap-2 overflow-x-auto pb-1 mt-4">
+
+    <button data-category="all" class="category-btn shrink-0 px-4 py-2 rounded-full text-xs font-medium border border-teal bg-teal text-white">
+      All
+    </button>
+
+    <button data-category="Medical" class="category-btn shrink-0 px-4 py-2 rounded-full text-xs font-medium border border-paper3 dark:border-white/10 text-ink/60 dark:text-paper/60">
+      <i class="fas fa-heart-pulse mr-1"></i>
+      Medical
+    </button>
+
+    <button data-category="Civic" class="category-btn shrink-0 px-4 py-2 rounded-full text-xs font-medium border border-paper3 dark:border-white/10 text-ink/60 dark:text-paper/60">
+      <i class="fas fa-road mr-1"></i>
+      Civic
+    </button>
+
+    <button data-category="Neighborhood" class="category-btn shrink-0 px-4 py-2 rounded-full text-xs font-medium border border-paper3 dark:border-white/10 text-ink/60 dark:text-paper/60">
+      <i class="fas fa-people-roof mr-1"></i>
+      Neighborhood
+    </button>
+
+    <button data-category="Student" class="category-btn shrink-0 px-4 py-2 rounded-full text-xs font-medium border border-paper3 dark:border-white/10 text-ink/60 dark:text-paper/60">
+      <i class="fas fa-graduation-cap mr-1"></i>
+      Student
+    </button>
+
+  </div>
+
+</section>
+
+
+<div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-6 lg:gap-8">
+
+  <section>
+
+    <div class="flex items-center justify-between mb-4">
+
+      <div>
+
+        <h2 class="font-display text-lg font-semibold">
+          Requests near you
+        </h2>
+
+        <p id="resultCount" class="text-[11px] text-ink/40 dark:text-paper/40 mt-1">
+          6 requests found
+        </p>
+
+      </div>
+
+
+      <select id="sortFilter" class="bg-transparent border border-paper3 dark:border-white/10 rounded-lg px-3 py-2 text-xs outline-none">
+
+        <option value="recent">Most recent</option>
+        <option value="nearby">Nearest first</option>
+        <option value="urgent">Urgent first</option>
+
+      </select>
+
+    </div>
+
+
+    <div id="requestList" class="space-y-3">
+
+
+      <article class="request-card bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-4 sm:p-5 hover:border-teal/50 transition-colors"
+               data-category="Medical"
+               data-area="Rangunia Sadar"
+               data-title="Need O+ blood donor">
+
+        <div class="flex items-start gap-3 sm:gap-4">
+
+          <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-xl bg-teal/10 text-teal flex items-center justify-center">
+            <i class="fas fa-heart-pulse"></i>
+          </div>
+
+
+          <div class="min-w-0 flex-1">
+
+            <div class="flex flex-wrap items-center gap-2">
+
+              <span class="text-[9px] font-mono uppercase tracking-wider text-teal">
+                Medical
+              </span>
+
+              <span class="text-[9px] px-2 py-0.5 rounded-full bg-red-500/10 text-red-600 dark:text-red-400">
+                Urgent
+              </span>
+
+            </div>
+
+            <h3 class="font-display font-semibold text-sm sm:text-base mt-1">
+              Need O+ blood donor
+            </h3>
+
+            <p class="text-xs text-ink/50 dark:text-paper/50 mt-1 leading-relaxed">
+              Looking for an O+ blood donor for a family member.
+            </p>
+
+            <div class="flex flex-wrap gap-x-4 gap-y-2 mt-3 text-[10px] text-ink/40 dark:text-paper/40">
+
+              <span>
+                <i class="fas fa-location-dot mr-1"></i>
+                Rangunia Sadar
+              </span>
+
+              <span>
+                <i class="fas fa-clock mr-1"></i>
+                18 min ago
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <button class="help-btn hidden sm:flex shrink-0 items-center gap-2 border border-teal text-teal rounded-lg px-3 py-2 text-xs font-medium hover:bg-teal hover:text-white transition-colors">
+            <i class="fas fa-hand-holding-heart"></i>
+            I can help
+          </button>
+
+        </div>
+
+
+        <button class="help-btn sm:hidden w-full mt-4 border border-teal text-teal rounded-lg py-2.5 text-xs font-medium">
+          <i class="fas fa-hand-holding-heart mr-1"></i>
+          I can help
+        </button>
+
+      </article>
+
+
+      <article class="request-card bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-4 sm:p-5 hover:border-teal/50 transition-colors"
+               data-category="Student"
+               data-area="Chandraghona"
+               data-title="Need a Physics tutor">
+
+        <div class="flex items-start gap-3 sm:gap-4">
+
+          <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-xl bg-gold/10 text-gold flex items-center justify-center">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+
+
+          <div class="min-w-0 flex-1">
+
+            <span class="text-[9px] font-mono uppercase tracking-wider text-gold">
+              Student
+            </span>
+
+            <h3 class="font-display font-semibold text-sm sm:text-base mt-1">
+              Need a Physics tutor
+            </h3>
+
+            <p class="text-xs text-ink/50 dark:text-paper/50 mt-1 leading-relaxed">
+              Looking for help with HSC Physics before the upcoming exam.
+            </p>
+
+            <div class="flex flex-wrap gap-x-4 gap-y-2 mt-3 text-[10px] text-ink/40 dark:text-paper/40">
+
+              <span>
+                <i class="fas fa-location-dot mr-1"></i>
+                Chandraghona
+              </span>
+
+              <span>
+                <i class="fas fa-clock mr-1"></i>
+                42 min ago
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <button class="help-btn hidden sm:flex shrink-0 items-center gap-2 border border-teal text-teal rounded-lg px-3 py-2 text-xs font-medium">
+            <i class="fas fa-hand-holding-heart"></i>
+            I can help
+          </button>
+
+        </div>
+
+
+        <button class="help-btn sm:hidden w-full mt-4 border border-teal text-teal rounded-lg py-2.5 text-xs font-medium">
+          <i class="fas fa-hand-holding-heart mr-1"></i>
+          I can help
+        </button>
+
+      </article>
+
+
+      <article class="request-card bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-4 sm:p-5 hover:border-teal/50 transition-colors"
+               data-category="Civic"
+               data-area="Rangunia Sadar"
+               data-title="Street light not working">
+
+        <div class="flex items-start gap-3 sm:gap-4">
+
+          <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-xl bg-gold/10 text-gold flex items-center justify-center">
+            <i class="fas fa-road"></i>
+          </div>
+
+
+          <div class="min-w-0 flex-1">
+
+            <span class="text-[9px] font-mono uppercase tracking-wider text-gold">
+              Civic
+            </span>
+
+            <h3 class="font-display font-semibold text-sm sm:text-base mt-1">
+              Street light not working
+            </h3>
+
+            <p class="text-xs text-ink/50 dark:text-paper/50 mt-1 leading-relaxed">
+              The street light near our local road has been out for several days.
+            </p>
+
+            <div class="flex flex-wrap gap-x-4 gap-y-2 mt-3 text-[10px] text-ink/40 dark:text-paper/40">
+
+              <span>
+                <i class="fas fa-location-dot mr-1"></i>
+                Rangunia Sadar
+              </span>
+
+              <span>
+                <i class="fas fa-clock mr-1"></i>
+                1 hr ago
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <button class="help-btn hidden sm:flex shrink-0 items-center gap-2 border border-teal text-teal rounded-lg px-3 py-2 text-xs font-medium">
+            <i class="fas fa-hand-holding-heart"></i>
+            I can help
+          </button>
+
+        </div>
+
+
+        <button class="help-btn sm:hidden w-full mt-4 border border-teal text-teal rounded-lg py-2.5 text-xs font-medium">
+          <i class="fas fa-hand-holding-heart mr-1"></i>
+          I can help
+        </button>
+
+      </article>
+
+
+      <article class="request-card bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-4 sm:p-5 hover:border-teal/50 transition-colors"
+               data-category="Neighborhood"
+               data-area="Kodala"
+               data-title="Need help moving a table">
+
+        <div class="flex items-start gap-3 sm:gap-4">
+
+          <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-xl bg-teal/10 text-teal flex items-center justify-center">
+            <i class="fas fa-people-roof"></i>
+          </div>
+
+
+          <div class="min-w-0 flex-1">
+
+            <span class="text-[9px] font-mono uppercase tracking-wider text-teal">
+              Neighborhood
+            </span>
+
+            <h3 class="font-display font-semibold text-sm sm:text-base mt-1">
+              Need help moving a table
+            </h3>
+
+            <p class="text-xs text-ink/50 dark:text-paper/50 mt-1 leading-relaxed">
+              Need one or two people to help move a heavy table nearby.
+            </p>
+
+            <div class="flex flex-wrap gap-x-4 gap-y-2 mt-3 text-[10px] text-ink/40 dark:text-paper/40">
+
+              <span>
+                <i class="fas fa-location-dot mr-1"></i>
+                Kodala
+              </span>
+
+              <span>
+                <i class="fas fa-clock mr-1"></i>
+                2 hrs ago
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <button class="help-btn hidden sm:flex shrink-0 items-center gap-2 border border-teal text-teal rounded-lg px-3 py-2 text-xs font-medium">
+            <i class="fas fa-hand-holding-heart"></i>
+            I can help
+          </button>
+
+        </div>
+
+
+        <button class="help-btn sm:hidden w-full mt-4 border border-teal text-teal rounded-lg py-2.5 text-xs font-medium">
+          <i class="fas fa-hand-holding-heart mr-1"></i>
+          I can help
+        </button>
+
+      </article>
+
+
+      <article class="request-card bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-4 sm:p-5 hover:border-teal/50 transition-colors"
+               data-category="Medical"
+               data-area="Padua"
+               data-title="Need transport to hospital">
+
+        <div class="flex items-start gap-3 sm:gap-4">
+
+          <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-xl bg-teal/10 text-teal flex items-center justify-center">
+            <i class="fas fa-ambulance"></i>
+          </div>
+
+
+          <div class="min-w-0 flex-1">
+
+            <div class="flex flex-wrap items-center gap-2">
+
+              <span class="text-[9px] font-mono uppercase tracking-wider text-teal">
+                Medical
+              </span>
+
+              <span class="text-[9px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400">
+                Soon
+              </span>
+
+            </div>
+
+            <h3 class="font-display font-semibold text-sm sm:text-base mt-1">
+              Need transport to hospital
+            </h3>
+
+            <p class="text-xs text-ink/50 dark:text-paper/50 mt-1 leading-relaxed">
+              Looking for a safe ride to the nearest hospital.
+            </p>
+
+            <div class="flex flex-wrap gap-x-4 gap-y-2 mt-3 text-[10px] text-ink/40 dark:text-paper/40">
+
+              <span>
+                <i class="fas fa-location-dot mr-1"></i>
+                Padua
+              </span>
+
+              <span>
+                <i class="fas fa-clock mr-1"></i>
+                3 hrs ago
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <button class="help-btn hidden sm:flex shrink-0 items-center gap-2 border border-teal text-teal rounded-lg px-3 py-2 text-xs font-medium">
+            <i class="fas fa-hand-holding-heart"></i>
+            I can help
+          </button>
+
+        </div>
+
+
+        <button class="help-btn sm:hidden w-full mt-4 border border-teal text-teal rounded-lg py-2.5 text-xs font-medium">
+          <i class="fas fa-hand-holding-heart mr-1"></i>
+          I can help
+        </button>
+
+      </article>
+
+
+      <article class="request-card bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-2xl p-4 sm:p-5 hover:border-teal/50 transition-colors"
+               data-category="Student"
+               data-area="Pomra"
+               data-title="Looking for English speaking partner">
+
+        <div class="flex items-start gap-3 sm:gap-4">
+
+          <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-xl bg-gold/10 text-gold flex items-center justify-center">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+
+
+          <div class="min-w-0 flex-1">
+
+            <span class="text-[9px] font-mono uppercase tracking-wider text-gold">
+              Student
+            </span>
+
+            <h3 class="font-display font-semibold text-sm sm:text-base mt-1">
+              Looking for English speaking partner
+            </h3>
+
+            <p class="text-xs text-ink/50 dark:text-paper/50 mt-1 leading-relaxed">
+              Want to practice English conversation for university preparation.
+            </p>
+
+            <div class="flex flex-wrap gap-x-4 gap-y-2 mt-3 text-[10px] text-ink/40 dark:text-paper/40">
+
+              <span>
+                <i class="fas fa-location-dot mr-1"></i>
+                Pomra
+              </span>
+
+              <span>
+                <i class="fas fa-clock mr-1"></i>
+                5 hrs ago
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <button class="help-btn hidden sm:flex shrink-0 items-center gap-2 border border-teal text-teal rounded-lg px-3 py-2 text-xs font-medium">
+            <i class="fas fa-hand-holding-heart"></i>
+            I can help
+          </button>
+
+        </div>
+
+
+        <button class="help-btn sm:hidden w-full mt-4 border border-teal text-teal rounded-lg py-2.5 text-xs font-medium">
+          <i class="fas fa-hand-holding-heart mr-1"></i>
+          I can help
+        </button>
+
+      </article>
+
+    </div>
+
+
+    <div id="noResults" class="hidden text-center py-16">
+
+      <div class="w-14 h-14 rounded-full bg-paper2 dark:bg-white/5 flex items-center justify-center mx-auto">
+
+        <i class="fas fa-magnifying-glass text-ink/30 dark:text-paper/30"></i>
+
+      </div>
+
+      <h3 class="font-display font-semibold mt-4">
+        No requests found
+      </h3>
+
+      <p class="text-xs text-ink/50 dark:text-paper/50 mt-1">
+        Try another search or filter.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <aside class="space-y-4">
+
+    <div class="bg-ink text-paper rounded-2xl p-5">
+
+      <span class="font-mono text-[10px] uppercase tracking-widest text-goldLight">
+        Your impact
+      </span>
+
+      <div class="grid grid-cols-2 gap-4 mt-5">
+
+        <div>
+
+          <div class="font-display text-2xl font-semibold">
+            12
+          </div>
+
+          <div class="text-[10px] text-paper/50 mt-1">
+            People helped
+          </div>
+
+        </div>
+
+        <div>
+
+          <div class="font-display text-2xl font-semibold">
+            4.8
+          </div>
+
+          <div class="text-[10px] text-paper/50 mt-1">
+            Trust score
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="bg-paper2 dark:bg-white/5 rounded-2xl p-5">
+
+      <div class="flex gap-3">
+
+        <div class="w-9 h-9 shrink-0 rounded-lg bg-teal/10 text-teal flex items-center justify-center">
+          <i class="fas fa-shield-halved text-sm"></i>
+        </div>
+
+        <div>
+
+          <h3 class="text-sm font-medium">
+            Help safely
+          </h3>
+
+          <p class="text-[11px] text-ink/50 dark:text-paper/50 mt-1 leading-relaxed">
+            Meet in public places when possible and never ask for passwords or OTPs.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="border border-paper3 dark:border-white/10 rounded-2xl p-5">
+
+      <div class="w-9 h-9 rounded-lg bg-gold/10 text-gold flex items-center justify-center">
+        <i class="fas fa-hand-holding-heart"></i>
+      </div>
+
+      <h3 class="font-display font-semibold text-sm mt-4">
+        Have a skill to share?
+      </h3>
+
+      <p class="text-[11px] text-ink/50 dark:text-paper/50 mt-1 leading-relaxed">
+        Add your skills to your profile so the right people can find you.
+      </p>
+
+      <a href="profile.html" class="inline-block text-xs font-medium text-teal mt-3 hover:underline">
+        Update my skills →
+      </a>
+
+    </div>
+
+  </aside>
+
+</div>
+
+
+  </main>
+
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-ink/95 backdrop-blur-md border-t border-paper3 dark:border-white/10">
+
+
+<div class="grid grid-cols-5">
+
+  <a href="dashboard.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+    <i class="fas fa-house text-sm"></i>
+    <span class="text-[9px]">Home</span>
+  </a>
+
+  <a href="find-help.html" class="flex flex-col items-center gap-1 py-3 text-teal">
+    <i class="fas fa-compass text-sm"></i>
+    <span class="text-[9px]">Find</span>
+  </a>
+
+  <a href="post-request.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+
+    <div class="w-9 h-9 -mt-5 rounded-full bg-teal text-white flex items-center justify-center shadow-lg">
+      <i class="fas fa-plus"></i>
+    </div>
+
+    <span class="text-[9px]">Post</span>
+
+  </a>
+
+  <a href="messages.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+    <i class="fas fa-message text-sm"></i>
+    <span class="text-[9px]">Messages</span>
+  </a>
+
+  <a href="profile.html" class="flex flex-col items-center gap-1 py-3 text-ink/50 dark:text-paper/50">
+    <i class="fas fa-user text-sm"></i>
+    <span class="text-[9px]">Profile</span>
+  </a>
+
+</div>
+
+
+  </nav>
+
+  <script src="js/script.js"></script>
+
+  <script>
+
+    const searchInput = document.getElementById("searchInput");
+    const areaFilter = document.getElementById("areaFilter");
+    const categoryButtons = document.querySelectorAll(".category-btn");
+    const requestCards = document.querySelectorAll(".request-card");
+    const noResults = document.getElementById("noResults");
+    const resultCount = document.getElementById("resultCount");
+
+    let selectedCategory = "all";
+
+    function filterRequests() {
+
+      const search = searchInput.value.toLowerCase().trim();
+      const area = areaFilter.value;
+
+      let visible = 0;
+
+      requestCards.forEach(card => {
+
+        const category = card.dataset.category;
+        const cardArea = card.dataset.area;
+        const title = card.dataset.title.toLowerCase();
+
+        const categoryMatch =
+          selectedCategory === "all" ||
+          category === selectedCategory;
+
+        const areaMatch =
+          area === "all" ||
+          cardArea === area;
+
+        const searchMatch =
+          title.includes(search) ||
+          category.toLowerCase().includes(search) ||
+          cardArea.toLowerCase().includes(search);
+
+        if (categoryMatch && areaMatch && searchMatch) {
+
+          card.classList.remove("hidden");
+          visible++;
+
+        } else {
+
+          card.classList.add("hidden");
+
+        }
+
+      });
+
+      resultCount.textContent =
+        `${visible} request${visible === 1 ? "" : "s"} found`;
+
+      if (visible === 0) {
+        noResults.classList.remove("hidden");
+      } else {
+        noResults.classList.add("hidden");
+      }
+
+    }
+
+
+    categoryButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        selectedCategory = button.dataset.category;
+
+        categoryButtons.forEach(btn => {
+
+          btn.classList.remove(
+            "bg-teal",
+            "text-white",
+            "border-teal"
+          );
+
+          btn.classList.add(
+            "border-paper3"
+          );
+
+        });
+
+        button.classList.add(
+          "bg-teal",
+          "text-white",
+          "border-teal"
+        );
+
+        filterRequests();
+
+      });
+
+    });
+
+
+    searchInput.addEventListener(
+      "input",
+      filterRequests
+    );
+
+
+    areaFilter.addEventListener(
+      "change",
+      filterRequests
+    );
+
+
+    document.querySelectorAll(".help-btn").forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        button.innerHTML =
+          '<i class="fas fa-check mr-1"></i> Interest sent';
+
+        button.classList.remove(
+          "text-teal",
+          "border-teal"
+        );
+
+        button.classList.add(
+          "bg-teal",
+          "text-white",
+          "border-teal"
+        );
+
+        button.disabled = true;
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
