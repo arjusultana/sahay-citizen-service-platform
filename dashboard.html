@@ -20,12 +20,9 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-
 <body class="bg-paper dark:bg-ink text-ink dark:text-paper min-h-screen">
 
-
   <!-- TOP BAR -->
-
   <div class="flex items-center justify-between px-4 sm:px-6 py-2 bg-white dark:bg-ink/60 border-b border-paper3 dark:border-white/10 text-xs">
 
     <div id="dateTime"
@@ -36,105 +33,76 @@
 
       <select id="language"
               class="bg-paper2 dark:bg-white/10 px-2 py-1 rounded text-xs outline-none">
-
         <option value="en">EN</option>
         <option value="bn">BN</option>
-
       </select>
 
-
       <button id="themeToggle"
+              type="button"
               class="w-7 h-7 rounded-full hover:bg-paper2 dark:hover:bg-white/10 flex items-center justify-center">
-
         <i class="fas fa-moon text-xs"></i>
-
       </button>
 
     </div>
-
   </div>
 
 
-
   <!-- HEADER -->
-
   <header class="sticky top-0 z-50 bg-paper/95 dark:bg-ink/95 backdrop-blur-md border-b border-paper3 dark:border-white/10">
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
 
-
       <!-- LOGO -->
-
       <a href="dashboard.html"
          class="flex items-center gap-2">
 
         <div class="w-9 h-9 rounded-full bg-teal text-white flex items-center justify-center font-display font-semibold">
-
           S
-
         </div>
 
         <span class="font-display font-semibold text-lg">
-
           Sahay
-
         </span>
 
       </a>
 
 
-
       <!-- DESKTOP NAV -->
-
       <nav class="hidden md:flex items-center gap-6">
 
         <a href="dashboard.html"
            class="text-xs text-teal font-medium">
-
           Home
-
         </a>
 
         <a href="find-help.html"
            class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">
-
           Find Help
-
         </a>
 
         <a href="my-requests.html"
            class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">
-
           My Requests
-
         </a>
 
         <a href="messages.html"
            class="text-xs text-ink/50 dark:text-paper/50 hover:text-teal">
-
           Messages
-
         </a>
 
       </nav>
 
 
-
       <!-- PROFILE -->
-
       <a href="profile.html"
          class="flex items-center gap-2">
 
         <div class="w-8 h-8 rounded-full bg-teal text-white flex items-center justify-center text-xs font-medium">
-
           A
-
         </div>
 
         <span class="hidden sm:block text-xs font-medium">
-
           Arju Sultana
-
         </span>
 
       </a>
@@ -144,14 +112,11 @@
   </header>
 
 
-
   <!-- MAIN -->
-
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 sm:py-10 pb-28">
 
 
     <!-- WELCOME -->
-
     <section class="mb-8">
 
       <div class="bg-ink text-paper rounded-2xl p-6 sm:p-8 relative overflow-hidden">
@@ -159,26 +124,17 @@
         <div class="relative z-10">
 
           <span class="font-mono text-[10px] tracking-widest uppercase text-goldLight">
-
             Your Sahay dashboard
-
           </span>
 
-
           <h1 class="font-display text-3xl sm:text-4xl font-semibold mt-3">
-
             Hello, Arju 👋
-
           </h1>
 
-
           <p class="text-sm text-paper/65 mt-2 max-w-lg">
-
             Find trusted help around you, offer your skills,
             and stay connected with your community.
-
           </p>
-
 
           <div class="flex flex-wrap gap-3 mt-6">
 
@@ -186,17 +142,14 @@
                class="inline-flex items-center gap-2 bg-teal hover:bg-tealLight text-white rounded-lg px-4 py-2.5 text-xs font-medium">
 
               <i class="fas fa-search"></i>
-
               Find Help
 
             </a>
-
 
             <a href="post-request.html"
                class="inline-flex items-center gap-2 border border-paper/20 hover:bg-white/10 text-paper rounded-lg px-4 py-2.5 text-xs font-medium">
 
               <i class="fas fa-plus"></i>
-
               Post a Request
 
             </a>
@@ -205,11 +158,7 @@
 
         </div>
 
-
-        <!-- Decorative circle -->
-
         <div class="absolute -right-20 -bottom-28 w-72 h-72 rounded-full border border-paper/10"></div>
-
         <div class="absolute -right-10 -bottom-18 w-52 h-52 rounded-full border border-goldLight/10"></div>
 
       </div>
@@ -217,102 +166,72 @@
     </section>
 
 
-
     <!-- STATS -->
-
     <section class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
 
-
       <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl p-4">
 
         <div class="w-9 h-9 rounded-lg bg-teal/10 text-teal flex items-center justify-center">
-
           <i class="fas fa-hand-holding-heart"></i>
-
         </div>
 
         <p class="text-2xl font-semibold mt-3">
-
           12
-
         </p>
 
         <p class="text-[10px] text-ink/45 dark:text-paper/45">
-
           Helps received
-
         </p>
 
       </div>
-
 
 
       <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl p-4">
 
         <div class="w-9 h-9 rounded-lg bg-goldLight/10 text-goldLight flex items-center justify-center">
-
           <i class="fas fa-heart"></i>
-
         </div>
 
         <p class="text-2xl font-semibold mt-3">
-
           8
-
         </p>
 
         <p class="text-[10px] text-ink/45 dark:text-paper/45">
-
           Helps given
-
         </p>
 
       </div>
-
 
 
       <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl p-4">
 
         <div class="w-9 h-9 rounded-lg bg-teal/10 text-teal flex items-center justify-center">
-
           <i class="fas fa-star"></i>
-
         </div>
 
         <p class="text-2xl font-semibold mt-3">
-
           4.8
-
         </p>
 
         <p class="text-[10px] text-ink/45 dark:text-paper/45">
-
           Trust score
-
         </p>
 
       </div>
 
 
-
       <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl p-4">
 
         <div class="w-9 h-9 rounded-lg bg-goldLight/10 text-goldLight flex items-center justify-center">
-
           <i class="fas fa-file-lines"></i>
-
         </div>
 
         <p class="text-2xl font-semibold mt-3">
-
           3
-
         </p>
 
         <p class="text-[10px] text-ink/45 dark:text-paper/45">
-
           Active requests
-
         </p>
 
       </div>
@@ -320,9 +239,7 @@
     </section>
 
 
-
     <!-- HELP CATEGORIES -->
-
     <section class="mb-8">
 
       <div class="flex items-end justify-between mb-4">
@@ -330,136 +247,97 @@
         <div>
 
           <h2 class="font-display text-xl sm:text-2xl font-semibold">
-
             Find help
-
           </h2>
 
           <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">
-
             Choose a category to find people nearby
-
           </p>
 
         </div>
 
-
         <a href="find-help.html"
            class="text-[10px] text-teal hover:underline">
-
           View all
-
         </a>
 
       </div>
-
 
 
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
 
 
-        <!-- Medical -->
-
+        <!-- MEDICAL -->
         <a href="medical.html"
            class="group bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl p-4 hover:border-teal transition-colors">
 
           <div class="w-11 h-11 rounded-xl bg-teal/10 text-teal flex items-center justify-center group-hover:bg-teal group-hover:text-white transition-colors">
-
             <i class="fas fa-heart-pulse"></i>
-
           </div>
 
           <h3 class="text-xs font-semibold mt-4">
-
             Medical
-
           </h3>
 
           <p class="text-[9px] text-ink/45 dark:text-paper/45 mt-1">
-
             Health & emergency
-
           </p>
 
         </a>
 
 
-
-        <!-- Civic -->
-
+        <!-- CIVIC -->
         <a href="civic.html"
            class="group bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl p-4 hover:border-teal transition-colors">
 
           <div class="w-11 h-11 rounded-xl bg-teal/10 text-teal flex items-center justify-center group-hover:bg-teal group-hover:text-white transition-colors">
-
             <i class="fas fa-building-columns"></i>
-
           </div>
 
           <h3 class="text-xs font-semibold mt-4">
-
             Civic
-
           </h3>
 
           <p class="text-[9px] text-ink/45 dark:text-paper/45 mt-1">
-
             Public services
-
           </p>
 
         </a>
 
 
-
-        <!-- Neighbor -->
-
+        <!-- NEIGHBOR -->
         <a href="neighbor.html"
            class="group bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl p-4 hover:border-teal transition-colors">
 
           <div class="w-11 h-11 rounded-xl bg-teal/10 text-teal flex items-center justify-center group-hover:bg-teal group-hover:text-white transition-colors">
-
             <i class="fas fa-people-arrows"></i>
-
           </div>
 
           <h3 class="text-xs font-semibold mt-4">
-
             Neighbor
-
           </h3>
 
           <p class="text-[9px] text-ink/45 dark:text-paper/45 mt-1">
-
             Local community
-
           </p>
 
         </a>
 
 
-
-        <!-- Student -->
-
+        <!-- STUDENT -->
         <a href="student.html"
            class="group bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl p-4 hover:border-teal transition-colors">
 
           <div class="w-11 h-11 rounded-xl bg-teal/10 text-teal flex items-center justify-center group-hover:bg-teal group-hover:text-white transition-colors">
-
             <i class="fas fa-graduation-cap"></i>
-
           </div>
 
           <h3 class="text-xs font-semibold mt-4">
-
             Student
-
           </h3>
 
           <p class="text-[9px] text-ink/45 dark:text-paper/45 mt-1">
-
             Study & tutoring
-
           </p>
 
         </a>
@@ -469,47 +347,35 @@
     </section>
 
 
-
     <!-- RECENT REQUESTS -->
-
     <section class="mb-8">
-
 
       <div class="flex items-end justify-between mb-4">
 
         <div>
 
           <h2 class="font-display text-xl sm:text-2xl font-semibold">
-
             Recent requests
-
           </h2>
 
           <p class="text-[10px] text-ink/45 dark:text-paper/45 mt-1">
-
             People who need help near you
-
           </p>
 
         </div>
 
-
         <a href="find-help.html"
            class="text-[10px] text-teal hover:underline">
-
           See all
-
         </a>
 
       </div>
 
 
-
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
 
-        <!-- Request 1 -->
-
+        <!-- REQUEST 1 -->
         <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl p-5">
 
           <div class="flex items-start justify-between gap-3">
@@ -517,34 +383,25 @@
             <div class="flex items-center gap-3">
 
               <div class="w-10 h-10 rounded-full bg-teal/10 text-teal flex items-center justify-center">
-
                 <i class="fas fa-book-open"></i>
-
               </div>
 
               <div>
 
                 <h3 class="text-xs font-semibold">
-
                   Looking for CSE study notes
-
                 </h3>
 
                 <p class="text-[9px] text-ink/40 dark:text-paper/40">
-
                   Student · 20 min ago
-
                 </p>
 
               </div>
 
             </div>
 
-
             <span class="text-[8px] px-2 py-1 rounded-full bg-teal/10 text-teal">
-
               Student
-
             </span>
 
           </div>
@@ -563,17 +420,14 @@
             <span class="text-[9px] text-ink/40 dark:text-paper/40">
 
               <i class="fas fa-location-dot text-teal mr-1"></i>
-
               0.8 km away
 
             </span>
-
 
             <a href="request-details.html"
                class="text-[10px] text-teal font-medium">
 
               View request
-
               <i class="fas fa-arrow-right ml-1"></i>
 
             </a>
@@ -583,9 +437,7 @@
         </div>
 
 
-
-        <!-- Request 2 -->
-
+        <!-- REQUEST 2 -->
         <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl p-5">
 
           <div class="flex items-start justify-between gap-3">
@@ -593,34 +445,25 @@
             <div class="flex items-center gap-3">
 
               <div class="w-10 h-10 rounded-full bg-teal/10 text-teal flex items-center justify-center">
-
                 <i class="fas fa-heart-pulse"></i>
-
               </div>
 
               <div>
 
                 <h3 class="text-xs font-semibold">
-
                   Need help getting medicine
-
                 </h3>
 
                 <p class="text-[9px] text-ink/40 dark:text-paper/40">
-
                   Medical · 35 min ago
-
                 </p>
 
               </div>
 
             </div>
 
-
             <span class="text-[8px] px-2 py-1 rounded-full bg-red-500/10 text-red-500">
-
               Urgent
-
             </span>
 
           </div>
@@ -639,17 +482,14 @@
             <span class="text-[9px] text-ink/40 dark:text-paper/40">
 
               <i class="fas fa-location-dot text-teal mr-1"></i>
-
               1.1 km away
 
             </span>
-
 
             <a href="request-details.html"
                class="text-[10px] text-teal font-medium">
 
               View request
-
               <i class="fas fa-arrow-right ml-1"></i>
 
             </a>
@@ -659,9 +499,7 @@
         </div>
 
 
-
-        <!-- Request 3 -->
-
+        <!-- REQUEST 3 -->
         <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl p-5">
 
           <div class="flex items-start justify-between gap-3">
@@ -669,34 +507,25 @@
             <div class="flex items-center gap-3">
 
               <div class="w-10 h-10 rounded-full bg-teal/10 text-teal flex items-center justify-center">
-
                 <i class="fas fa-building-columns"></i>
-
               </div>
 
               <div>
 
                 <h3 class="text-xs font-semibold">
-
                   Help with civic service form
-
                 </h3>
 
                 <p class="text-[9px] text-ink/40 dark:text-paper/40">
-
                   Civic · 1 hour ago
-
                 </p>
 
               </div>
 
             </div>
 
-
             <span class="text-[8px] px-2 py-1 rounded-full bg-teal/10 text-teal">
-
               Civic
-
             </span>
 
           </div>
@@ -715,17 +544,14 @@
             <span class="text-[9px] text-ink/40 dark:text-paper/40">
 
               <i class="fas fa-location-dot text-teal mr-1"></i>
-
               1.8 km away
 
             </span>
-
 
             <a href="request-details.html"
                class="text-[10px] text-teal font-medium">
 
               View request
-
               <i class="fas fa-arrow-right ml-1"></i>
 
             </a>
@@ -735,9 +561,7 @@
         </div>
 
 
-
-        <!-- Request 4 -->
-
+        <!-- REQUEST 4 -->
         <div class="bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl p-5">
 
           <div class="flex items-start justify-between gap-3">
@@ -745,34 +569,25 @@
             <div class="flex items-center gap-3">
 
               <div class="w-10 h-10 rounded-full bg-teal/10 text-teal flex items-center justify-center">
-
                 <i class="fas fa-people-arrows"></i>
-
               </div>
 
               <div>
 
                 <h3 class="text-xs font-semibold">
-
                   Need help moving furniture
-
                 </h3>
 
                 <p class="text-[9px] text-ink/40 dark:text-paper/40">
-
                   Neighbor · 2 hours ago
-
                 </p>
 
               </div>
 
             </div>
 
-
             <span class="text-[8px] px-2 py-1 rounded-full bg-teal/10 text-teal">
-
               Neighbor
-
             </span>
 
           </div>
@@ -791,17 +606,14 @@
             <span class="text-[9px] text-ink/40 dark:text-paper/40">
 
               <i class="fas fa-location-dot text-teal mr-1"></i>
-
               2.0 km away
 
             </span>
-
 
             <a href="request-details.html"
                class="text-[10px] text-teal font-medium">
 
               View request
-
               <i class="fas fa-arrow-right ml-1"></i>
 
             </a>
@@ -815,15 +627,11 @@
     </section>
 
 
-
     <!-- QUICK ACTIONS -->
-
     <section>
 
       <h2 class="font-display text-xl sm:text-2xl font-semibold mb-4">
-
         Quick actions
-
       </h2>
 
 
@@ -834,52 +642,39 @@
            class="flex items-center gap-4 bg-teal text-white rounded-xl p-5 hover:bg-tealLight transition-colors">
 
           <div class="w-10 h-10 rounded-lg bg-white/15 flex items-center justify-center">
-
             <i class="fas fa-plus"></i>
-
           </div>
 
           <div>
 
             <p class="text-xs font-semibold">
-
               Post a request
-
             </p>
 
             <p class="text-[9px] text-white/65 mt-1">
-
               Ask your community for help
-
             </p>
 
           </div>
 
         </a>
-
 
 
         <a href="my-requests.html"
            class="flex items-center gap-4 bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl p-5 hover:border-teal transition-colors">
 
           <div class="w-10 h-10 rounded-lg bg-teal/10 text-teal flex items-center justify-center">
-
             <i class="fas fa-file-lines"></i>
-
           </div>
 
           <div>
 
             <p class="text-xs font-semibold">
-
               My requests
-
             </p>
 
             <p class="text-[9px] text-ink/45 dark:text-paper/45 mt-1">
-
               Track your active requests
-
             </p>
 
           </div>
@@ -887,28 +682,21 @@
         </a>
 
 
-
         <a href="messages.html"
            class="flex items-center gap-4 bg-white dark:bg-white/5 border border-paper3 dark:border-white/10 rounded-xl p-5 hover:border-teal transition-colors">
 
           <div class="w-10 h-10 rounded-lg bg-teal/10 text-teal flex items-center justify-center">
-
             <i class="fas fa-message"></i>
-
           </div>
 
           <div>
 
             <p class="text-xs font-semibold">
-
               Messages
-
             </p>
 
             <p class="text-[9px] text-ink/45 dark:text-paper/45 mt-1">
-
               See your conversations
-
             </p>
 
           </div>
@@ -919,17 +707,13 @@
 
     </section>
 
-
   </main>
 
 
-
   <!-- MOBILE NAV -->
-
   <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-ink/95 backdrop-blur-md border-t border-paper3 dark:border-white/10">
 
     <div class="grid grid-cols-5">
-
 
       <a href="dashboard.html"
          class="flex flex-col items-center gap-1 py-3 text-teal">
@@ -937,9 +721,7 @@
         <i class="fas fa-house text-sm"></i>
 
         <span class="text-[9px]">
-
           Home
-
         </span>
 
       </a>
@@ -951,9 +733,7 @@
         <i class="fas fa-compass text-sm"></i>
 
         <span class="text-[9px]">
-
           Find
-
         </span>
 
       </a>
@@ -969,9 +749,7 @@
         </div>
 
         <span class="text-[9px]">
-
           Post
-
         </span>
 
       </a>
@@ -983,9 +761,7 @@
         <i class="fas fa-message text-sm"></i>
 
         <span class="text-[9px]">
-
           Messages
-
         </span>
 
       </a>
@@ -997,9 +773,7 @@
         <i class="fas fa-user text-sm"></i>
 
         <span class="text-[9px]">
-
           Profile
-
         </span>
 
       </a>
@@ -1009,27 +783,10 @@
   </nav>
 
 
-
   <!-- SCRIPT -->
-
   <script>
 
-    // Demo login protection
-    // Login করলে এই value তৈরি হবে
-
-    const loggedIn =
-      localStorage.getItem("sahayLoggedIn");
-
-
-    if (loggedIn !== "true") {
-
-      window.location.href = "index.html";
-
-    }
-
-
-
-    // Date and time
+    /* Date and Time */
 
     function updateDateTime() {
 
@@ -1043,11 +800,17 @@
         minute: "2-digit"
       };
 
-      document.getElementById("dateTime").textContent =
-        now.toLocaleString("en-US", options);
+      const dateTime =
+        document.getElementById("dateTime");
+
+      if (dateTime) {
+
+        dateTime.textContent =
+          now.toLocaleString("en-US", options);
+
+      }
 
     }
-
 
     updateDateTime();
 
@@ -1055,38 +818,41 @@
 
 
 
-    // Dark mode
+    /* Dark Mode */
 
     const themeToggle =
       document.getElementById("themeToggle");
 
 
-    themeToggle.addEventListener("click", function () {
+    if (themeToggle) {
 
-      document.documentElement.classList.toggle("dark");
+      themeToggle.addEventListener("click", function () {
 
-      const icon =
-        themeToggle.querySelector("i");
+        document.documentElement.classList.toggle("dark");
+
+        const icon =
+          themeToggle.querySelector("i");
 
 
-      if (document.documentElement.classList.contains("dark")) {
+        if (document.documentElement.classList.contains("dark")) {
 
-        icon.classList.remove("fa-moon");
+          icon.classList.remove("fa-moon");
 
-        icon.classList.add("fa-sun");
+          icon.classList.add("fa-sun");
 
-      } else {
+        } else {
 
-        icon.classList.remove("fa-sun");
+          icon.classList.remove("fa-sun");
 
-        icon.classList.add("fa-moon");
+          icon.classList.add("fa-moon");
 
-      }
+        }
 
-    });
+      });
+
+    }
 
   </script>
-
 
 </body>
 </html>
